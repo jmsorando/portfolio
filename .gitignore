@@ -1,3 +1,5 @@
 node_modules/
 .artifacts/
 *.tar.gz
+portfolio-codebase.txt
+portfolio-src-clean.zip
