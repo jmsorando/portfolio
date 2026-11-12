@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="pulse-hero" x1="4" y1="18" x2="60" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#087eaa"/>
+      <stop offset="48%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#7541c8"/>
+    </linearGradient>
+  </defs>
+  <path d="M4 34h13l9-24 12 44 9-20h13" fill="none" stroke="url(#pulse-hero)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

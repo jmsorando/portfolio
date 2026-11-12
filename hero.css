@@ -1,0 +1,110 @@
+/* Approved editorial hero shared by the homepages and review routes. */
+body.hero-experiment > section.portfolio-hero{
+  background:#fafaf8;padding-block:32px 44px!important;overflow:hidden;
+}
+html body.hero-experiment .portfolio-hero .hero-layout{
+  display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0;
+  position:relative;isolation:isolate;min-height:660px;align-items:center;
+}
+html body.hero-experiment .portfolio-hero .hero-copy{
+  grid-column:1 / 10;grid-row:1;position:relative;z-index:2;
+  padding-block:60px;align-self:start;pointer-events:none;
+}
+html body.hero-experiment .portfolio-hero h1{
+  font-size:clamp(60px,5.28vw,76px)!important;line-height:1.04!important;
+  letter-spacing:-.055em!important;white-space:normal;max-width:none;
+  margin:0;color:#172033;
+}
+.hero-experiment .hero-title-line{display:block;width:max-content;max-width:100%}
+/* Preserve the final glyph's overhang inside the gradient paint area. */
+.hero-experiment .portfolio-hero .ai-heading{padding-inline-end:.09em;margin-inline-end:-.09em}
+html body.hero-experiment > section.portfolio-hero .hero-copy p{
+  font-size:20px;line-height:1.7;max-width:52ch;width:68%;
+  margin-top:32px!important;contain:none;color:#526174;
+}
+html body.hero-experiment .portfolio-hero .hero-illustration{
+  grid-column:6 / -1;grid-row:1;width:100%;max-width:none;
+  justify-self:end;margin-right:-15%;align-self:start;position:relative;z-index:1;
+}
+html body.hero-experiment .portfolio-hero .hero-runner{
+  display:block;width:100%;height:auto;margin:0;overflow:visible;
+}
+@media(min-width:901px) and (max-width:1150px){
+  html body.hero-experiment .portfolio-hero .hero-layout{min-height:600px}
+  html body.hero-experiment .portfolio-hero .hero-illustration{width:100%;margin-right:-8%;align-self:start;margin-top:108px}
+  html body.hero-experiment > section.portfolio-hero .hero-copy p{width:62%;max-width:46ch}
+}
+@media(max-width:900px){
+  body.hero-experiment > section.portfolio-hero{padding-block:36px 32px!important}
+  html body.hero-experiment .portfolio-hero .hero-layout{display:flex;flex-direction:column;min-height:0;gap:16px}
+  html body.hero-experiment .portfolio-hero .hero-copy{width:100%;padding:0}
+  html body.hero-experiment .portfolio-hero h1{font-size:clamp(36px,5.73vw,44px)!important;line-height:1.12!important;letter-spacing:-.045em!important}
+  .hero-experiment .hero-title-line{width:auto}
+  html body.hero-experiment > section.portfolio-hero .hero-copy p{font-size:18px;line-height:1.7;width:100%;max-width:55ch;margin-top:24px!important}
+  html body.hero-experiment .portfolio-hero .hero-illustration{width:100%;max-width:600px;margin:0;align-self:center}
+}
+@media(forced-colors:active){
+  html body.hero-experiment .portfolio-hero h1,html body.hero-experiment > section.portfolio-hero .hero-copy p{color:CanvasText}
+}
+
+
+
+
+/* Shared placement in both languages, independent of copy height. */
+@media(min-width:1151px){html body.hero-experiment .portfolio-hero .hero-illustration{transform:translate(20px,-52px)}}
+
+@media(min-width:901px){
+ html[lang="es"] body.hero-experiment .portfolio-hero h1{font-size:clamp(52px,4.45vw,64px)!important}
+}
+
+
+@media(max-width:900px){html body.hero-experiment .portfolio-hero .hero-illustration{transform:translateY(-12px)}}
+/* Bring projects closer while retaining the avatar's visual placement. */
+body.hero-experiment > section.portfolio-hero{padding-bottom:12px!important}
+body.hero-experiment > section#projects{padding-top:32px!important}
+html body.hero-experiment .portfolio-hero .hero-layout{min-height:0}
+@media(min-width:1151px){
+ html body.hero-experiment .portfolio-hero .hero-illustration{margin-bottom:-52px}
+}
+@media(max-width:900px){
+ html body.hero-experiment .portfolio-hero .hero-illustration{margin-bottom:-12px}
+ body.hero-experiment > section#projects{padding-top:28px!important}
+}
+.hero-experiment header .brand-columns{display:block;width:44px;height:20px;color:#2563eb;flex-shrink:0}
+@media(max-width:767px){.hero-experiment header .brand-columns{width:35.2px;height:16px}}
+@media(forced-colors:active){.hero-experiment header .brand-columns{color:CanvasText}}
+/* The mark spans the complete name/degree block, including wrapped degrees. */
+.hero-experiment header>div>div:first-child{align-items:stretch;gap:16px}
+.hero-experiment header>div>div:first-child>div{display:flex;flex-direction:column;justify-content:center;gap:3px;margin-left:0!important}
+.hero-experiment header>div>div:first-child>div>a{line-height:1.25}
+.hero-experiment header>div>div:first-child>div>span{margin-top:0;line-height:1.4}
+.hero-experiment header .brand-symbol{display:block;position:relative;flex:0 0 56px;min-height:30px}
+.hero-experiment header .brand-symbol .brand-columns{position:absolute;inset:0;width:100%;height:100%}
+@media(max-width:767px){.hero-experiment header .brand-symbol{flex-basis:48px}}
+
+/* Slow colour flow, isolated to the experimental title. */
+@media(prefers-reduced-motion:no-preference) and (forced-colors:none){
+ .hero-experiment .portfolio-hero .ai-heading{background-image:linear-gradient(100deg,#087eaa 0%,#2563eb 28%,#7541c8 55%,#2563eb 78%,#087eaa 100%);background-size:220% 100%;animation:hero-ai-flow 6s ease-in-out infinite alternate}
+}
+@keyframes hero-ai-flow{from{background-position:0% 50%}to{background-position:100% 50%}}
+
+/* Progressive scroll enhancements for the approved hero layout. */
+.hero-experiment header nav a{position:relative}
+.hero-experiment header nav a[aria-current="location"]{color:#2563eb}
+.hero-experiment header nav a[aria-current="location"]::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:currentColor}
+.hero-experiment .reading-progress{position:absolute;left:0;right:0;bottom:0;height:2px;background:#2563eb;transform:scaleX(0);transform-origin:left;pointer-events:none}
+.hero-experiment .explore-work{display:inline-flex;align-items:center;gap:8px;margin-top:20px;min-height:44px;color:#2563eb;font-size:14px;font-weight:600;pointer-events:auto;text-underline-offset:5px}
+.hero-experiment .explore-work:hover{text-decoration:underline}
+@media(prefers-reduced-motion:no-preference){
+ .hero-experiment .scroll-reveal-pending{opacity:0;transform:translateY(14px)}
+ .hero-experiment .scroll-reveal-enter{animation:section-enter 400ms ease-out both}
+}
+@keyframes section-enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){
+ .hero-experiment .scroll-reveal-pending,.hero-experiment .scroll-reveal-enter{opacity:1;transform:none;animation:none}
+}
+@media(forced-colors:active){
+ .hero-experiment header nav a[aria-current="location"],.hero-experiment .explore-work{color:LinkText}
+ .hero-experiment header nav a[aria-current="location"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+ .hero-experiment .reading-progress{background:Highlight;forced-color-adjust:none}
+}
