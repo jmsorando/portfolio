@@ -36,7 +36,7 @@ for(const lang of ['en','es']){
  <link rel="alternate" hreflang="en" href="${origin}/en/">
  <link rel="alternate" hreflang="es" href="${origin}/es/">
  <link rel="alternate" hreflang="x-default" href="${origin}/en/">
- <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+ <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
  <script src="/language.js" defer></script>
  </head>`);
  html=html.replace('    <!-- TOP HEADER',`    <a class="skip-link" href="#projects">${m.skip}</a>\n    <!-- TOP HEADER`);
