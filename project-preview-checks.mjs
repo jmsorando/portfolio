@@ -49,8 +49,8 @@ for(const lang of ['en','es']) {
   const entries=areaProjects([...original].reverse(),lang);
   assert.equal(AREAS.length,3);
   const allIds=AREAS.flatMap(a=>a.projects);
-  assert.equal(new Set(allIds).size,10);
-  assert.deepEqual(AREAS[2].projects,['LAB-EXERCISE','LAB-FORCE','LAB-MOCAP','LAB-BODY','PRJ-05']);
+  assert.equal(new Set(allIds).size,11);
+  assert.deepEqual(AREAS[2].projects,['LAB-EXERCISE','LAB-FORCE','LAB-MOCAP','LAB-BODY','LAB-RMR','PRJ-05']);
   for(const p of original){
     assert(allIds.includes(p.id));
     for(const key of ['goal','protocol','outcome','svgType'])assert.equal(entries.get(p.id)[key],p[key],'Preserve project content and visuals');
@@ -67,9 +67,9 @@ for(const lang of ['en','es']) {
   for(const id of Object.keys(MATERIALS))assert(allIds.includes(id),'Every existing supporting document stays reachable');
   assert.equal(entries.get('LAB-FORCE').sections.length,2,'Distinguish UCL sessions from the physiotherapy placement');
   assert(entries.get('LAB-FORCE').sections[0].label.includes('UCL'));
-  for(const id of ['LAB-EXERCISE','LAB-FORCE','LAB-MOCAP','LAB-BODY'])assert(entries.get(id).sections.every(s=>s.label&&s.body));
+  for(const id of ['LAB-EXERCISE','LAB-FORCE','LAB-MOCAP','LAB-BODY','LAB-RMR'])assert(entries.get(id).sections.every(s=>s.label&&s.body));
   assert.match(entries.get('LAB-BODY').sections[1].body,/TANITA.*DXA/);
-  assert.equal(new Set(Object.values(LAB_VISUALS).map(v=>v.src)).size,5,'Every lab experience has distinct artwork');
+  assert.equal(new Set(Object.values(LAB_VISUALS).map(v=>v.src)).size,6,'Every lab experience has distinct artwork');
   for(const [id,visual] of Object.entries(LAB_VISUALS)){
     assert.equal(entries.get(id).visual,visual);
     assert(visual.alt[lang]);

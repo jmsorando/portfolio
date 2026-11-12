@@ -19,13 +19,13 @@ export const AREAS = [
     contents: {en: 'Glucose prediction · PharmaMiku · Celonis', es: 'Predicción de glucosa · PharmaMiku · Celonis'}
   },
   {
-    id: 'performance-lab', projects: ['LAB-EXERCISE', 'LAB-FORCE', 'LAB-MOCAP', 'LAB-BODY', 'PRJ-05'],
+    id: 'performance-lab', projects: ['LAB-EXERCISE', 'LAB-FORCE', 'LAB-MOCAP', 'LAB-BODY', 'LAB-RMR', 'PRJ-05'],
     visual: {
       src: '/projects/visuals/human-performance.webp', width: 1400, height: 1120,
       alt: {en: 'Blue VO₂ testing mask with grey headgear, red straps and a front flow sensor.', es: 'Máscara azul de pruebas de VO₂ con estructura gris, correas rojas y sensor de flujo frontal.'}
     },
     title: {en: 'Human Performance Lab', es: 'Laboratorio de rendimiento humano'},
-    contents: {en: 'Exercise testing · Strength · Motion capture · Body composition · Ergogenic aids', es: 'Pruebas de esfuerzo · Fuerza · Captura de movimiento · Composición corporal · Ayudas ergogénicas'}
+    contents: {en: 'Exercise testing · Strength · Motion capture · Body composition · RMR · Ergogenic aids', es: 'Pruebas de esfuerzo · Fuerza · Captura de movimiento · Composición corporal · RMR · Ayudas ergogénicas'}
   }
 ];
 
@@ -39,6 +39,7 @@ export const PROJECT_LABELS = {
   'LAB-FORCE': {en: 'Strength and movement assessment', es: 'Fuerza y evaluación del movimiento'},
   'LAB-MOCAP': {en: 'Motion capture', es: 'Captura de movimiento'},
   'LAB-BODY': {en: 'Body composition', es: 'Composición corporal'},
+  'LAB-RMR': {en: 'RMR and energy expenditure', es: 'RMR y gasto energético'},
   'PRJ-05': {en: 'Ergogenic Aids Study (Coursework)', es: 'Estudio de ayudas ergogénicas (trabajo de curso)'}
 };
 
@@ -48,6 +49,7 @@ export const LAB_VISUALS = {
   'LAB-FORCE': {src:'/projects/visuals/lab-force.webp', alt:{en:'Force plate and handheld grip dynamometer.',es:'Plataforma de fuerza y dinamómetro de mano.'}},
   'LAB-MOCAP': {src:'/projects/visuals/lab-mocap-suit.webp', alt:{en:'Mannequin in a full-length motion capture suit with tracking markers between two cameras.',es:'Maniquí con traje completo de captura de movimiento y marcadores entre dos cámaras.'}},
   'LAB-BODY': {src:'/projects/visuals/lab-body.webp', alt:{en:'Body composition analyzer and skinfold caliper.',es:'Analizador de composición corporal y plicómetro.'}},
+  'LAB-RMR': {src:'/projects/visuals/lab-rmr.webp', alt:{en:'Handheld spirometer flow sensor and tabletop metabolic gas analyzer.',es:'Espirómetro portátil con sensor de flujo y analizador metabólico de gases de sobremesa.'}},
   'PRJ-05': {src:'/projects/visuals/lab-cherry-refined.webp', alt:{en:'Tart cherries and a stopwatch.',es:'Cerezas ácidas y cronómetro.'}}
 };
 
@@ -96,6 +98,13 @@ const LAB = {
     sections: [
       {label:{en:'Context',es:'Contexto'},body:{en:'UCL · Practical laboratory sessions',es:'UCL · Sesiones prácticas de laboratorio'}},
       {label:{en:'Experience',es:'Experiencia'},body:{en:'Practical sessions on body composition assessment with TANITA, skinfold calipers and DXA.',es:'Sesiones prácticas sobre evaluación de la composición corporal con TANITA, pinzas de pliegues cutáneos y DXA.'}}
+    ]
+  },
+  'LAB-RMR': {
+    title: {en:'RMR and energy expenditure monitoring',es:'Monitorización del RMR y del gasto energético'},
+    sections: [
+      {label:{en:'Context',es:'Contexto'},body:{en:'UCL · Practical laboratory sessions',es:'UCL · Sesiones prácticas de laboratorio'}},
+      {label:{en:'Experience',es:'Experiencia'},body:{en:'Practical sessions on resting metabolic rate (RMR) and energy expenditure assessment using indirect calorimetry and activity monitoring.',es:'Sesiones prácticas sobre evaluación de la tasa metabólica en reposo (RMR) y del gasto energético mediante calorimetría indirecta y monitorización de la actividad.'}}
     ]
   }
 };

@@ -175,6 +175,24 @@
           "width": 568
         }
       ]
+    },
+    "/projects/visuals/lab-rmr.webp": {
+      "width": 1400,
+      "height": 933,
+      "variants": [
+        {
+          "src": "/assets/responsive/lab-rmr-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/assets/responsive/lab-rmr-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/projects/visuals/lab-rmr.webp",
+          "width": 1400
+        }
+      ]
     }
   },
   "documents": {
