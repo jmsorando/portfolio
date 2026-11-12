@@ -1,0 +1,49 @@
+/* Approved academic identity styles, shared by the main and review routes. */
+.academic-identities .academic-identity-degree-header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.academic-identities .academic-identity-header {
+  display:grid;
+  grid-template-columns:64px minmax(0,1fr);
+  align-items:center;
+  gap:16px;
+}
+.academic-identities .academic-identity-details { min-width:0; }
+.academic-identities .academic-identity-logo {
+  display:block;
+  width:64px;
+  height:64px;
+  object-fit:contain;
+  flex:none;
+}
+.academic-identities .academic-identity-logo.academic-identity-ucl {
+  width:96px;
+  height:auto;
+}
+.academic-identities #experience .academic-identity-name {
+  display:block;
+  color:#1e55ba;
+  font:500 17px/1.4 'Space Grotesk',sans-serif;
+  letter-spacing:-.01em;
+  overflow-wrap:break-word;
+}
+.academic-identities #experience .academic-identity-date {
+  display:block;
+  min-width:0;
+  color:#5c6b80;
+  font:400 11px/1.6 'JetBrains Mono',monospace;
+}
+.academic-identities .academic-identity-details .academic-identity-date { margin-top:6px; }
+.academic-identities #experience .academic-society h3 { margin:18px 0 0; }
+@media(max-width:767px) {
+  .academic-identities .academic-identity-header { grid-template-columns:52px minmax(0,1fr); }
+  .academic-identities .academic-identity-logo { width:52px; height:52px; }
+  .academic-identities .academic-identity-logo.academic-identity-ucl { width:80px; height:auto; }
+}
+@media(forced-colors:active) {
+  .academic-identities #experience .academic-identity-name,
+  .academic-identities #experience .academic-identity-date { color:CanvasText; }
+}

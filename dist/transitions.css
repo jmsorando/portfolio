@@ -1,0 +1,81 @@
+/* Opt-in editorial transitions. All default states remain visible without JS. */
+.section-transitions { --transition-distance:8px; --transition-accent:96px; }
+.section-transitions [data-section-transition="career"] { position:relative; }
+.section-transitions [data-section-transition="career"]::after,
+.section-transitions .transition-contact-line {
+  display:block;
+  width:var(--transition-accent);
+  height:1px;
+  background:var(--design-blue);
+  transform-origin:left center;
+  pointer-events:none;
+}
+.section-transitions [data-section-transition="career"]::after {
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-1px;
+}
+.section-transitions #contact { position:relative; }
+.section-transitions .transition-contact-edge {
+  position:absolute;
+  inset:0 0 auto;
+  pointer-events:none;
+}
+@media(max-width:767px) {
+  .section-transitions { --transition-distance:4px; --transition-accent:64px; }
+}
+@media(prefers-reduced-motion:no-preference) {
+  /* Keep the career separator fixed; animate only its children and accent. */
+  .section-transitions [data-section-transition="career"].scroll-reveal-pending,
+  .section-transitions [data-section-transition="career"].scroll-reveal-enter {
+    opacity:1;
+    transform:none;
+    animation:none;
+  }
+  .section-transitions [data-section-transition="career"].scroll-reveal-pending::after,
+  .section-transitions [data-section-transition="line"].scroll-reveal-pending {
+    opacity:1;
+    transform:scaleX(0);
+  }
+  .section-transitions [data-section-transition="career"].scroll-reveal-pending>.design-section-label { opacity:0; }
+  .section-transitions [data-section-transition="career"].scroll-reveal-pending>h2,
+  .section-transitions [data-section-transition="copy"].scroll-reveal-pending,
+  .section-transitions [data-section-transition="actions"].scroll-reveal-pending {
+    opacity:0;
+    transform:translateY(var(--transition-distance));
+  }
+  .section-transitions [data-section-transition="career"].scroll-reveal-enter::after,
+  .section-transitions [data-section-transition="line"].scroll-reveal-enter {
+    animation:transition-line-enter 180ms ease-out both;
+  }
+  .section-transitions [data-section-transition="career"].scroll-reveal-enter>.design-section-label {
+    animation:transition-label-enter 180ms ease-out 30ms both;
+  }
+  .section-transitions [data-section-transition="career"].scroll-reveal-enter>h2 {
+    animation:transition-title-enter 240ms ease-out 60ms both;
+  }
+  .section-transitions [data-section-transition="copy"].scroll-reveal-enter {
+    animation:transition-title-enter 240ms ease-out 30ms both;
+  }
+  .section-transitions [data-section-transition="actions"].scroll-reveal-enter {
+    animation:transition-title-enter 240ms ease-out 60ms both;
+  }
+}
+@keyframes transition-line-enter { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+@keyframes transition-label-enter { from { opacity:0; } to { opacity:1; } }
+@keyframes transition-title-enter { from { opacity:0; transform:translateY(var(--transition-distance)); } to { opacity:1; transform:none; } }
+@media(prefers-reduced-motion:reduce) {
+  .section-transitions [data-section-transition],
+  .section-transitions [data-section-transition]::after,
+  .section-transitions [data-section-transition="career"]>h2,
+  .section-transitions [data-section-transition="career"]>.design-section-label {
+    opacity:1!important;
+    transform:none!important;
+    animation:none!important;
+  }
+}
+@media(forced-colors:active) {
+  .section-transitions [data-section-transition="career"]::after,
+  .section-transitions .transition-contact-line { background:Highlight; }
+}

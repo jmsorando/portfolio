@@ -1,0 +1,233 @@
+/* Contemporary digital laboratory. Approved on the main portfolio and review routes. */
+body.portfolio-design {
+  --design-paper:#fafaf8;
+  --design-ink:#172033;
+  --design-blue:#2563eb;
+  --design-night:#111f33;
+  --design-line:#dce4ef;
+  --design-muted:#526174;
+  background:var(--design-paper);
+  color:var(--design-ink);
+}
+.portfolio-design header {
+  background:rgb(250 250 248 / .93);
+  border-color:var(--design-line);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.portfolio-design header>div { min-height:84px; }
+.portfolio-design header>div>div:last-child { column-gap:20px; row-gap:8px; }
+.portfolio-design header nav { gap:20px; }
+.portfolio-design header nav a {
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  font-size:11px;
+  letter-spacing:.05em;
+  transition:color 180ms ease;
+}
+.portfolio-design header nav a[aria-current="location"]::after { bottom:4px; height:2px; }
+.portfolio-design header .space-x-2 a,
+.portfolio-design .language-picker a {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  min-height:36px;
+  border-radius:6px;
+  transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease;
+}
+.portfolio-design header .space-x-2 a { padding:8px 10px; border-color:var(--design-line); font-size:10px; }
+.portfolio-design .language-picker a { min-width:32px; }
+.portfolio-design header .space-x-2 a:hover { background:#edf3ff; border-color:#adc3ed; }
+.portfolio-design a:focus-visible,
+.portfolio-design button:focus-visible,
+.portfolio-design summary:focus-visible { outline:3px solid var(--design-blue); outline-offset:4px; }
+
+.portfolio-design .explore-work { gap:12px; transition:color 180ms ease; }
+.portfolio-design .explore-work span { transition:transform 180ms ease; }
+.portfolio-design .explore-work:hover span { transform:translateY(2px); }
+
+.portfolio-design .design-section-label {
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  color:var(--design-blue);
+  font:500 11px/1.5 'JetBrains Mono',monospace;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.portfolio-design .design-section-label>span { color:#627187; letter-spacing:0; }
+.portfolio-design .design-section-label>span::after {
+  content:"·";
+  display:inline-block;
+  margin-left:12px;
+  opacity:.7;
+}
+.portfolio-design #projects { border-color:var(--design-line); padding-bottom:72px!important; }
+.portfolio-design section>div>div.border-b { border-color:var(--design-line); }
+.portfolio-design #projectsGrid .project-card {
+  border-radius:10px;
+  border-color:var(--design-line)!important;
+  box-shadow:0 2px 5px #111f3304,0 5px 16px #111f3303;
+  transition:transform 180ms ease,box-shadow 180ms ease,border-color 180ms ease!important;
+}
+.portfolio-design #projectsGrid .project-card:hover { transform:none; }
+@media(hover:hover) and (pointer:fine) {
+  .portfolio-design #projectsGrid .project-card:hover {
+    transform:translateY(-3px);
+    border-color:#90afe9!important;
+    box-shadow:0 5px 10px #111f3306,0 12px 24px #111f3309;
+  }
+}
+.portfolio-design #projectsGrid .project-card:focus-within { outline:3px solid var(--design-blue); outline-offset:4px; }
+.portfolio-design #projectsGrid .project-open:focus-visible { outline:none; }
+
+/* Professional chronology and a quieter academic column. */
+.portfolio-design #experience { padding-block:72px!important; border-color:var(--design-line); }
+.portfolio-design .design-career-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:44px; margin-top:40px; }
+.portfolio-design .career-professional,
+.portfolio-design .career-academic { min-width:0; position:relative; }
+.portfolio-design #experience .career-professional>span,
+.portfolio-design #experience .career-academic>span {
+  display:block;
+  margin-bottom:24px;
+  color:#5c6b80;
+  font:500 11px/1.6 'JetBrains Mono',monospace;
+  letter-spacing:.06em;
+}
+.portfolio-design .career-professional::before {
+  content:"";
+  position:absolute;
+  top:52px;
+  bottom:22px;
+  left:6px;
+  width:1px;
+  background:var(--design-line);
+  pointer-events:none;
+}
+.portfolio-design .career-entry { position:relative; margin-left:32px; padding:0 0 28px; }
+.portfolio-design .career-entry+.career-entry { padding-top:28px; border-top:1px solid var(--design-line); }
+.portfolio-design .career-entry:last-child { padding-bottom:0; }
+.portfolio-design .career-entry::before {
+  content:"";
+  position:absolute;
+  left:-30px;
+  top:5px;
+  width:9px;
+  height:9px;
+  border:2px solid var(--design-blue);
+  border-radius:50%;
+  background:var(--design-paper);
+  box-shadow:0 0 0 5px var(--design-paper);
+  pointer-events:none;
+}
+.portfolio-design .career-entry+.career-entry::before { top:33px; }
+.portfolio-design .career-entry-header { display:grid; grid-template-columns:116px minmax(0,1fr); gap:18px; align-items:start; }
+.portfolio-design .career-entry-header>div { grid-column:2; grid-row:1; min-width:0; }
+.portfolio-design #experience .career-entry-header>span {
+  grid-column:1;
+  grid-row:1;
+  color:#5c6b80;
+  font:400 11px/1.8 'JetBrains Mono',monospace;
+}
+.portfolio-design .career-date-part { display:block; }
+.portfolio-design #experience .career-entry-header>div>span { font:500 12px/1.7 'Plus Jakarta Sans',sans-serif; color:#1e55ba; }
+.portfolio-design #experience .career-entry h3 { font:500 22px/1.3 'Space Grotesk',sans-serif; letter-spacing:-.025em; margin:6px 0 0; }
+.portfolio-design #experience .career-entry ul { margin:18px 0 0 134px; padding:0 0 0 17px; list-style-position:outside; font-size:15px; line-height:1.75; color:var(--design-muted); }
+.portfolio-design #experience .career-entry li+li { margin-top:10px; }
+.portfolio-design .career-entry li::marker { color:#8b9db6; font-size:.7em; }
+.portfolio-design .academic-card { padding:24px; margin-top:16px; background:#fff; border:1px solid var(--design-line); border-radius:10px; }
+.portfolio-design .academic-card.academic-degree { margin-top:0; }
+.portfolio-design #experience .academic-card>span { font:400 11px/1.6 'JetBrains Mono',monospace; color:#5c6b80; }
+.portfolio-design #experience .academic-card h3 { font:500 21px/1.35 'Space Grotesk',sans-serif; letter-spacing:-.025em; margin:10px 0; }
+.portfolio-design #experience .academic-degree h3 { font-size:25px; }
+.portfolio-design #experience .academic-card p { margin:8px 0 0; font:400 15px/1.75 'Plus Jakarta Sans',sans-serif; }
+.portfolio-design #experience .academic-degree>p { color:#1e55ba; font-weight:500; }
+.portfolio-design #experience .academic-degree .bg-emerald-500\/10 { margin-top:20px; border-left:2px solid var(--design-blue); background:#edf3ff; border-radius:0 6px 6px 0; padding:14px 16px; font:500 13px/1.9 'Plus Jakarta Sans',sans-serif; color:#214c9a; }
+.portfolio-design .academic-modules { margin-top:24px; border-color:var(--design-line); }
+.portfolio-design .academic-modules summary { padding:10px 0; min-height:44px; font:500 12px/1.8 'JetBrains Mono',monospace; }
+.portfolio-design #experience .module-years ul { display:block; font-size:14px; }
+.portfolio-design .module-years li+li { margin-top:8px; }
+.portfolio-design .module-years h4 { font:500 11px/1.6 'JetBrains Mono',monospace; }
+
+/* A full-width navy closing section, using the existing email and copy action. */
+.portfolio-design #contact { padding-block:72px!important; background:var(--design-night); color:#f4f7fd; }
+.portfolio-design .design-contact-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:36px; align-items:center; }
+.portfolio-design .design-contact-copy { min-width:0; }
+.portfolio-design #contact .design-section-label,
+.portfolio-design #contact .design-section-label>span { color:#a9c4fa; }
+.portfolio-design #contact h2 { margin:20px 0 18px; color:#f4f7fd; font-size:clamp(36px,3.5vw,48px)!important; line-height:1.12; letter-spacing:-.04em; }
+.portfolio-design #contact p { max-width:46ch; color:#becbde; font:400 16px/1.75 'Plus Jakarta Sans',sans-serif; margin:0; }
+.portfolio-design .design-contact-actions { min-width:0; border:1px solid #34455e; border-radius:10px; padding:28px; background:#15263d; }
+.portfolio-design .design-contact-label { color:#a6bad7; font:500 10px/1.5 'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.09em; }
+.portfolio-design .design-contact-email { display:flex; justify-content:space-between; align-items:center; gap:18px; min-height:44px; padding:12px 0 20px; border-bottom:1px solid #34455e; color:#f4f7fd; font:500 18px/1.6 'Space Grotesk',sans-serif; transition:color 180ms ease; }
+.portfolio-design .design-contact-email span { min-width:0; overflow-wrap:anywhere; }
+.portfolio-design .design-contact-email svg { flex:none; width:20px; height:20px; }
+.portfolio-design .design-contact-email:hover { color:#a9c4fa; }
+.portfolio-design .design-contact-buttons { display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+.portfolio-design .design-contact-buttons>a,
+.portfolio-design .design-contact-buttons>button { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:44px; padding:10px 16px; border:1px solid #516787; border-radius:6px; color:#e4edfb; background:transparent; font:500 12px/1.6 'Plus Jakarta Sans',sans-serif; cursor:pointer; transition:color 180ms ease,background-color 180ms ease,border-color 180ms ease; }
+.portfolio-design .design-contact-buttons svg { width:16px; height:16px; flex:none; }
+.portfolio-design .design-contact-buttons>a { border-color:#2563eb; background:#2563eb; color:#fff; }
+.portfolio-design .design-contact-buttons>button:hover { background:#223852; border-color:#809bbf; }
+.portfolio-design .design-contact-buttons>a:hover { background:#1d4ed8; border-color:#1d4ed8; }
+.portfolio-design .design-copy-buffer { position:fixed; inset:0 auto auto 0; width:1px; height:1px; padding:0; border:0; opacity:0; font-size:16px; }
+.portfolio-design #contact a:focus-visible,
+.portfolio-design #contact button:focus-visible { outline-color:#a9c4fa; }
+.portfolio-design footer { background:var(--design-night); border-color:#34455e; color:#afbed3!important; padding-block:24px; }
+.portfolio-design footer>div { row-gap:10px; line-height:1.8; }
+
+@media(min-width:1024px) {
+  .portfolio-design .design-career-grid { grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:48px; }
+  .portfolio-design .design-contact-grid { grid-template-columns:1fr 1fr; gap:64px; }
+}
+@media(max-width:1200px) {
+  .portfolio-design header>div>div:last-child { width:100%; }
+}
+@media(max-width:767px) {
+  .portfolio-design header>div { gap:6px!important; min-height:0; }
+  .portfolio-design header>div>div:last-child { column-gap:12px; row-gap:0; }
+  .portfolio-design header nav { justify-content:space-between; gap:16px; width:100%; }
+  .portfolio-design header nav a { min-height:40px; font-size:10px; }
+  .portfolio-design header .space-x-2 a,
+  .portfolio-design .language-picker a { min-height:36px; }
+  .portfolio-design .design-section-label { font-size:10px; }
+  .portfolio-design #projects { padding-bottom:44px!important; }
+  .portfolio-design #experience,.portfolio-design #contact { padding-block:44px!important; }
+  .portfolio-design .design-career-grid { gap:36px; margin-top:28px; }
+  .portfolio-design .career-entry { margin-left:28px; }
+  .portfolio-design .career-entry::before { left:-26px; }
+  .portfolio-design .career-entry-header { grid-template-columns:minmax(0,1fr); gap:8px; }
+  .portfolio-design .career-entry-header>div { grid-column:1; grid-row:2; }
+  .portfolio-design #experience .career-entry-header>span { grid-column:1; grid-row:1; }
+  .portfolio-design #experience .career-entry ul { margin-left:0; }
+  .portfolio-design #experience .career-entry h3 { font-size:21px; }
+  .portfolio-design .academic-card { padding:22px; }
+  .portfolio-design .design-contact-actions { padding:22px; }
+  .portfolio-design .design-contact-email { font-size:17px; gap:12px; }
+  .portfolio-design .design-contact-buttons { gap:10px; }
+  .portfolio-design .design-contact-buttons>a,.portfolio-design .design-contact-buttons>button { padding-inline:12px; }
+  .portfolio-design footer>div { align-items:flex-start; }
+}
+
+@media(prefers-reduced-motion:no-preference) {
+  .portfolio-design .scroll-reveal-pending { transform:translateY(8px); }
+  .portfolio-design .scroll-reveal-enter { animation:design-section-enter 300ms ease-out both; }
+}
+@keyframes design-section-enter { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@media(prefers-reduced-motion:reduce) {
+  html:has(.portfolio-design) { scroll-behavior:auto!important; }
+  .portfolio-design *, .portfolio-design *::before, .portfolio-design *::after { animation:none!important; transition:none!important; }
+  .portfolio-design .scroll-reveal-pending,.portfolio-design .scroll-reveal-enter { opacity:1; transform:none; }
+  .portfolio-design #projectsGrid .project-card:hover,.portfolio-design .explore-work:hover span { transform:none; }
+}
+@media(forced-colors:active) {
+  html .portfolio-design .portfolio-hero .ai-heading { background:none; color:CanvasText; -webkit-text-fill-color:CanvasText; }
+  .portfolio-design header,.portfolio-design #contact,.portfolio-design footer,.portfolio-design .academic-card,.portfolio-design .design-contact-actions { background:Canvas; color:CanvasText!important; border-color:CanvasText; }
+  .portfolio-design #contact h2,.portfolio-design #contact p,.portfolio-design .design-contact-label,.portfolio-design .design-section-label,.portfolio-design .design-section-label>span { color:CanvasText; }
+  .portfolio-design .design-contact-email,.portfolio-design .design-contact-buttons>a { color:LinkText; border-color:ButtonText; background:Canvas; }
+  .portfolio-design .design-contact-buttons>button { color:ButtonText; border-color:ButtonText; background:ButtonFace; }
+  .portfolio-design .career-entry::before { border-color:CanvasText; background:Canvas; box-shadow:none; }
+  .portfolio-design .career-professional::before { background:CanvasText; }
+  .portfolio-design #projectsGrid .project-card:focus-within,.portfolio-design a:focus-visible,.portfolio-design button:focus-visible,.portfolio-design summary:focus-visible { outline-color:Highlight; }
+}

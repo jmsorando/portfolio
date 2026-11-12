@@ -1,0 +1,33 @@
+/* Approved three-area cards and visual project chooser. */
+#projectsGrid .area-contents{margin:12px 0 0;color:#53647c;font:400 13px/1.65 'Plus Jakarta Sans',sans-serif}
+#projectsGrid .project-open{min-height:44px}
+#projectsGrid .area-visual{background:#111f33}
+#projectsGrid .area-visual>img{display:block;width:100%;height:100%;object-fit:contain;box-sizing:border-box;padding:14px 8px}
+#projectsGrid [data-area="health-data"] .area-visual>img{padding:12px 8px}
+#projectsGrid [data-area="performance-lab"] .area-visual>img{padding:22px 32px}
+#projectsGrid{grid-template-columns:minmax(0,1fr)}
+@media(min-width:768px){#projectsGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1024px){#projectsGrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.project-areas-dialog .pa-header{position:sticky;top:0;z-index:3;background:#111f33}
+.project-areas-dialog .pp-bar{position:static}
+.project-areas-dialog .pa-project-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+.project-areas-dialog .pa-project-tile{position:relative;min-width:0;display:flex;flex-direction:column;border:1px solid #43546c;border-radius:7px;background:#111f33}
+.project-areas-dialog .pa-project-tile:hover{border-color:#9fc1ff}
+.project-areas-dialog .pa-project-tile:focus-within{outline:3px solid #a9c9ff;outline-offset:4px}
+.project-areas-dialog .pa-project-tile h3{margin:0;padding:18px 20px 20px;border-top:1px solid #34445a}
+.project-areas-dialog .pa-project-button{display:block;width:100%;min-height:44px;text-align:left;border:0;padding:0;background:transparent;color:#f1f5fb;font:500 21px/1.35 'Space Grotesk',sans-serif;cursor:pointer}
+.project-areas-dialog .pa-project-button::after{content:'';position:absolute;inset:0;border-radius:7px}
+.project-areas-dialog .pa-project-button:focus-visible{outline:0}
+.project-areas-dialog .pa-tile-visual{overflow:hidden;border-radius:7px 7px 0 0;pointer-events:none}
+.project-areas-dialog .pa-tile-visual .project-visual{width:100%;height:auto;min-height:0;aspect-ratio:1.65;background:#111f33}
+.project-areas-dialog .pa-tile-visual .project-visual>img{display:block;width:100%;height:100%;object-fit:contain!important;padding:14px}
+.project-areas-dialog .pa-tile-visual .dresio-lunge>img{padding:8px 28px 28px}
+.project-areas-dialog .pa-tile-visual .brand-badge.brand-dresio{gap:7px}
+.project-areas-dialog .pa-tile-visual .brand-badge.brand-dresio img{width:20px;height:28px}
+.project-areas-dialog .pa-tile-visual .brand-badge.brand-dresio strong{font-size:15px}
+.project-areas-dialog .pa-lab-visual>img{display:block;width:100%;height:100%;object-fit:contain;padding:16px}
+.project-areas-dialog #pp-title:focus{outline:0}
+@media(min-width:768px){.project-areas-dialog .pa-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1024px){.project-areas-dialog .pa-project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.project-areas-dialog .pa-project-grid.pa-pair{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){.project-areas-dialog .pa-project-grid{gap:20px}.project-areas-dialog .pa-project-button{font-size:20px}.project-areas-dialog .pa-project-tile h3{padding:16px}}
+@media(forced-colors:active){.project-areas-dialog .pa-header,.project-areas-dialog .pa-project-tile{background:Canvas}.project-areas-dialog .pa-project-tile,.project-areas-dialog .pa-project-tile h3{border-color:CanvasText}.project-areas-dialog .pa-project-button{color:LinkText}.project-areas-dialog .pa-project-tile:focus-within{outline-color:Highlight}}

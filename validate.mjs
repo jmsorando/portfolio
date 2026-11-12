@@ -1,0 +1,38 @@
+import assert from 'node:assert/strict';
+import {readFile,access} from 'node:fs/promises';
+import vm from 'node:vm';
+const projects={};
+for(const lang of ['en','es']){
+ const html=await readFile(`dist/${lang}/index.html`,'utf8');
+ assert(html.includes(`<html lang="${lang}"`));
+ assert.equal((html.match(/<h1\b/g)||[]).length,1);
+ assert(html.includes('/hero-scroll.js?v=3') && html.includes('/hero.css?v=17'));
+ assert(html.includes('reading-progress') && html.includes('explore-work'));
+ assert(html.includes('/assets/hero-runner-simple.webp'));
+ assert(!html.includes('id="about"') && !html.includes('href="#about"') && !html.includes('href="/about.css"'),'Main pages must omit About and its stylesheet');
+ assert(!html.includes('/preview/') && !html.includes('noindex') && !html.includes('Experimental hero preview'));
+ const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]).filter(x=>!x.includes('${'));
+ assert.equal(ids.length,new Set(ids).size);
+ for(const match of html.matchAll(/href="#([^"]+)"/g))assert(ids.includes(match[1]),`Broken anchor ${match[1]}`);
+ assert(html.includes(`data-language="${lang}" aria-label="${lang==='en'?'English':'Español'}" aria-current="page"`));
+ assert(html.includes(`rel="canonical" href="https://jmsorando.github.io/portfolio/${lang}/"`));
+ assert(!/7355|317093|hotmail|<form\b|\.jpg|\.pptx|\.pdf/.test(html),'Unexpected private data, form, or raw document link');
+ const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(x=>x[1]).filter(Boolean);
+ scripts.forEach(script=>new vm.Script(script));
+ const app=scripts.find(s=>s.includes('const PROJECTS'));
+ projects[lang]=JSON.parse(vm.runInNewContext(app+';JSON.stringify(PROJECTS);',{window:{}}));
+ assert.equal(projects[lang].length,6);
+ assert(!html.includes('data-filter='));
+ assert(!app.includes('featured-project'));
+ assert.equal(projects[lang].filter(p=>p.category==='ai').length,4);
+ assert.equal(projects[lang].filter(p=>p.category==='wearable_performance').length,2);
+ for(const p of projects[lang])assert(p.title&&p.goal&&p.protocol&&p.outcome);
+}
+assert.deepEqual(projects.en.map(p=>[p.id,p.category]),projects.es.map(p=>[p.id,p.category]));
+for(let i=0;i<6;i++)for(const key of ['title','goal','protocol','outcome'])assert.notEqual(projects.en[i][key],projects.es[i][key],`Untranslated ${key}`);
+const spanish=await readFile('dist/es/index.html','utf8');
+for(const term of ['GOAL:</strong>','PROTOCOL:</strong>','OUTCOME:</strong>','CONCEPT VISUAL','Featured Projects & Research','Get In Touch'])assert(!spanish.includes(term),`Untranslated ${term}`);
+for(const asset of ['refinements.css','language.js','favicon.svg','assets/dresio-logo.png','assets/orb-logo.svg','assets/dresio-lunge-two-legs.webp','assets/orb-mouthguard-cutout.webp','assets/polar-h10-strap.webp'])await access(`dist/${asset}`);
+assert((await readFile('dist/refinements.css','utf8')).includes('prefers-reduced-motion:reduce'));
+assert((await readFile('dist/index.html','utf8')).includes("location.replace('/en/'+location.search+location.hash)"));
+console.log('PASS: both locales, six original translated project records, valid scripts, anchors, metadata, language controls, privacy, assets and redirects.');

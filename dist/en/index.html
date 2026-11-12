@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Miguel Sorando Campillo | Sports Tech & Health Science Portfolio</title><link rel="preload" as="image" href="/assets/hero-runner-simple.webp" type="image/webp" fetchpriority="high">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        alabaster: '#FAF9F6',
+                        ink: '#121212',
+                        cobalt: '#2563EB',
+                        cobaltDark: '#1D4ED8',
+                        warmSand: '#E5E2DC',
+                        cardLight: '#FFFFFF',
+                        uclNavy: '#002147'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        serif: ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF9F6;
+            color: #121212;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-serif, .font-display { font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif; }
+
+        /* Crisp hairline grid borders */
+        .border-hairline {
+            border-color: #E5E2DC;
+        }
+
+        /* Hide only the page scrollbar; retain native scrolling and dialog scrollbars. */
+        html { scrollbar-width: none; }
+        html::-webkit-scrollbar { display: none; }
+    </style>
+<link rel="stylesheet" href="/refinements.css?v=project-dialog-3">
+<meta name="description" content="José Miguel Sorando Campillo: sport and exercise science, health technology, wearable validation, and artificial intelligence.">
+ <meta name="theme-color" content="#FAF9F6">
+ <link rel="canonical" href="https://jmsorando.github.io/portfolio/en/">
+ <link rel="alternate" hreflang="en" href="https://jmsorando.github.io/portfolio/en/">
+ <link rel="alternate" hreflang="es" href="https://jmsorando.github.io/portfolio/es/">
+ <link rel="alternate" hreflang="x-default" href="https://jmsorando.github.io/portfolio/en/">
+ <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+ <script src="/hero-scroll.js?v=3" defer></script>
+ <link rel="stylesheet" href="/hero.css?v=17"><style>@media(max-width:900px){.binary-ground .binary-extra{display:none}.binary-ground text{font-size:22px}}</style><link rel="stylesheet" href="/design.css?v=2"><script src="/design.js?v=1" defer></script><link rel="stylesheet" href="/academic.css?v=1"><link rel="stylesheet" href="/transitions.css?v=1"><link rel="stylesheet" href="/projects/dialog.css?v=1"><link rel="stylesheet" href="/projects/areas.css?v=4"><link rel="modulepreload" href="/projects/areas-model.mjs?v=11"><link rel="modulepreload" href="/projects/model.mjs?v=9"><link rel="modulepreload" href="/projects/image-delivery.mjs?v=5"><link rel="modulepreload" href="/projects/image-manifest.mjs?v=5"><link rel="modulepreload" href="/projects/popup-image-loading.mjs?v=1"><script type="module" src="/projects/areas.js?v=13"></script></head>
+<body id="top" class="section-transitions academic-identities portfolio-design hero-experiment min-h-screen antialiased flex flex-col justify-between">
+
+    <a class="skip-link" href="#projects">Skip to projects</a>
+    <!-- TOP HEADER NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 bg-alabaster/90 backdrop-blur-md border-b border-hairline transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col md:flex-row md:items-center justify-between gap-3">
+            <!-- Left Side: Name centred beside the blue columns -->
+            <div class="flex items-center space-x-3">
+                <span class="brand-symbol" aria-hidden="true"><svg preserveAspectRatio="none" class="brand-columns shrink-0" width="56" height="20" viewBox="0 0 56 20" fill="currentColor" aria-hidden="true" focusable="false"><rect x="0" y="0" width="5" height="20"/><rect x="11" y="0" width="8" height="20"/><rect x="25" y="0" width="11" height="20"/><rect x="42" y="0" width="14" height="20"/></svg></span>
+                <div>
+                    <a href="#top" class="font-display font-bold text-sm tracking-wide text-ink uppercase hover:text-cobalt transition-colors block">
+                        JOSÉ MIGUEL SORANDO CAMPILLO
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side: Section Nav & Direct Hyperlinks -->
+            <div class="flex flex-wrap items-center gap-4 text-xs font-mono">
+                <!-- Section Navigation Anchors -->
+                <nav class="flex items-center space-x-3 text-slate-600">
+            <a href="#projects" class="hover:text-cobalt transition-colors">PROJECTS</a>
+                    <a href="#experience" class="hover:text-cobalt transition-colors">CAREER</a>
+                    <a href="#contact" class="hover:text-cobalt transition-colors">CONTACT</a>
+                </nav>
+
+                <div class="h-4 w-px bg-hairline hidden sm:block"></div>
+
+                <div class="language-picker" role="group" aria-label="Language">
+ <a href="/en/" lang="en" hreflang="en" data-language="en" aria-label="English" aria-current="page">EN</a><span aria-hidden="true">/</span><a href="/es/" lang="es" hreflang="es" data-language="es" aria-label="Español" >ES</a></div>
+                <!-- Action Links -->
+                <div class="flex items-center space-x-2">
+                    <a href="mailto:josemiguel.sorandocampillo@gmail.com" class="px-2.5 py-1 bg-cardLight border border-hairline text-ink hover:border-cobalt hover:text-cobalt font-bold transition-all flex items-center gap-1">
+                        <span>EMAIL</span>
+                        <span class="text-[10px]">↗</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jos%C3%A9-miguel-s-36636b281" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 bg-cardLight border border-hairline text-ink hover:border-cobalt hover:text-cobalt font-bold transition-all flex items-center gap-1">
+                        <span>LINKEDIN</span>
+                        <span class="text-[10px]">↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    <span class="reading-progress" aria-hidden="true"></span></header>
+
+    <!-- TITLE & BRIEF DESCRIPTION HEADER SECTION -->
+    <section class="py-10 border-b border-hairline bg-cardLight/30 portfolio-hero">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-layout">
+            <div class="hero-copy">
+            <h1 class="font-display font-bold text-ink"><span class="hero-title-line">Sport Science,</span><span class="hero-title-line">Health Technology</span><span class="hero-title-line">&amp; <span class="ai-heading">Artificial Intelligence</span></span></h1>
+            <p class="font-mono text-xs sm:text-sm text-slate-600 max-w-3xl leading-relaxed">
+                First Class Honors graduate in Sport & Exercise Medical Sciences from University College London (UCL). Interested in how technology and artificial intelligence can improve human performance and people's quality of life.
+            </p><a class="explore-work" href="#projects">Explore my work <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-illustration"><svg class="hero-runner" viewBox="0 0 1440 1320" aria-labelledby="figure-title figure-desc" role="img">
+<title id="figure-title">Human movement meets technology</title><desc id="figure-desc">A grey sculpted mannequin in a sprinting pose.</desc>
+<g class="binary-ground" aria-hidden="true" pointer-events="none" transform="translate(1128 1171) scale(.85) translate(-1128 -1171)">
+ <style>
+ .binary-ground .binary-ring{fill:#2563eb}
+ @media(forced-colors:active){.binary-ground .binary-ring{fill:CanvasText}}
+ </style>
+ <ellipse cx="1128" cy="1171" rx="59" ry="10" fill="#172033" opacity=".045"/>
+ <ellipse cx="1128" cy="1171" rx="38" ry="6" fill="#172033" opacity=".04"/>
+ <g fill="#2563eb" font-family="monospace" font-size="20" font-weight="600" text-anchor="middle" dominant-baseline="middle"><g class="binary-ring"><text class="binary-core" x="1398.00" y="1171.00">0</text><text class="binary-extra" x="1381.96" y="1198.50">1</text><text class="binary-core" x="1353.84" y="1215.39">0</text><text class="binary-extra" x="1323.08" y="1227.00">0</text><text class="binary-core" x="1291.31" y="1235.50">1</text><text class="binary-extra" x="1259.04" y="1241.82">1</text><text class="binary-core" x="1226.47" y="1246.42">0</text><text class="binary-extra" x="1193.73" y="1249.56">1</text><text class="binary-core" x="1160.89" y="1251.40">0</text><text class="binary-extra" x="1128.00" y="1252.00">1</text><text class="binary-core" x="1095.11" y="1251.40">0</text><text class="binary-extra" x="1062.27" y="1249.56">0</text><text class="binary-core" x="1029.53" y="1246.42">1</text><text class="binary-extra" x="996.96" y="1241.82">1</text><text class="binary-core" x="964.69" y="1235.50">0</text><text class="binary-extra" x="932.92" y="1227.00">1</text><text class="binary-core" x="902.16" y="1215.39">0</text><text class="binary-extra" x="874.04" y="1198.50">1</text><text class="binary-core" x="858.00" y="1171.00">0</text><text class="binary-extra" x="874.04" y="1143.50">0</text><text class="binary-core" x="902.16" y="1126.61">1</text><text class="binary-extra" x="932.92" y="1115.00">1</text><text class="binary-core" x="964.69" y="1106.50">0</text><text class="binary-extra" x="996.96" y="1100.18">1</text><text class="binary-core" x="1029.53" y="1095.58">0</text><text class="binary-extra" x="1062.27" y="1092.44">1</text><text class="binary-core" x="1095.11" y="1090.60">0</text><text class="binary-extra" x="1128.00" y="1090.00">0</text><text class="binary-core" x="1160.89" y="1090.60">1</text><text class="binary-extra" x="1193.73" y="1092.44">1</text><text class="binary-core" x="1226.47" y="1095.58">0</text><text class="binary-extra" x="1259.04" y="1100.18">1</text><text class="binary-core" x="1291.31" y="1106.50">0</text><text class="binary-extra" x="1323.08" y="1115.00">1</text><text class="binary-core" x="1353.84" y="1126.61">0</text><text class="binary-extra" x="1381.96" y="1143.50">0</text></g><g class="binary-ring"><text class="binary-core" x="1308.00" y="1171.00">0</text><text class="binary-extra" x="1287.59" y="1194.59">1</text><text class="binary-core" x="1257.26" y="1206.49">0</text><text class="binary-extra" x="1225.47" y="1213.88">0</text><text class="binary-core" x="1193.17" y="1218.54">1</text><text class="binary-extra" x="1160.63" y="1221.15">1</text><text class="binary-core" x="1128.00" y="1222.00">0</text><text class="binary-extra" x="1095.37" y="1221.15">1</text><text class="binary-core" x="1062.83" y="1218.54">0</text><text class="binary-extra" x="1030.53" y="1213.88">1</text><text class="binary-core" x="998.74" y="1206.49">0</text><text class="binary-extra" x="968.41" y="1194.59">0</text><text class="binary-core" x="948.00" y="1171.00">1</text><text class="binary-extra" x="968.41" y="1147.41">1</text><text class="binary-core" x="998.74" y="1135.51">0</text><text class="binary-extra" x="1030.53" y="1128.12">1</text><text class="binary-core" x="1062.83" y="1123.46">0</text><text class="binary-extra" x="1095.37" y="1120.85">1</text><text class="binary-core" x="1128.00" y="1120.00">0</text><text class="binary-extra" x="1160.63" y="1120.85">0</text><text class="binary-core" x="1193.17" y="1123.46">1</text><text class="binary-extra" x="1225.47" y="1128.12">1</text><text class="binary-core" x="1257.26" y="1135.51">0</text><text class="binary-extra" x="1287.59" y="1147.41">1</text></g><g class="binary-ring"><text class="binary-core" x="1218.00" y="1171.00">0</text><text class="binary-extra" x="1185.22" y="1187.21">1</text><text class="binary-core" x="1147.16" y="1191.52">0</text><text class="binary-extra" x="1108.84" y="1191.52">0</text><text class="binary-core" x="1070.78" y="1187.21">1</text><text class="binary-extra" x="1038.00" y="1171.00">1</text><text class="binary-core" x="1070.78" y="1154.79">0</text><text class="binary-extra" x="1108.84" y="1150.48">1</text><text class="binary-core" x="1147.16" y="1150.48">0</text><text class="binary-extra" x="1185.22" y="1154.79">1</text></g></g>
+ </g><image transform="translate(1280 0) scale(-1 1)" href="/assets/hero-runner-simple.webp" width="1280" height="1280"/>
+
+
+
+
+
+
+</svg></div>
+        </div>
+    </section>
+
+<!-- SECTION 01: FILTERABLE PROJECTS GRID -->
+    <section id="projects" class="py-12 border-b border-hairline">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-hairline pb-4 gap-4">
+                <div>
+                    <span class="design-section-label"><span aria-hidden="true">01</span>Projects</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl text-ink">Featured Projects & Research</h2>
+                </div>
+
+                <!-- Category Filters -->
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 03: CAREER LEDGER & UCL ACADEMICS -->
+    <section id="experience" class="py-12 border-b border-hairline">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="border-b border-hairline pb-4" data-section-transition="career">
+                <span class="design-section-label"><span aria-hidden="true">02</span>Career</span>
+                <h2 class="font-serif text-2xl sm:text-3xl text-ink">Professional & Academic History</h2>
+            </div>
+
+            <div class="design-career-grid">
+                <!-- Professional R&D Experience -->
+                <div class="career-professional">
+                    <span class="text-xs font-mono uppercase text-slate-400 block font-bold">PROFESSIONAL EXPERIENCE</span>
+
+                    <!-- DRESIO -->
+                    <div class="career-entry">
+                        <div class="career-entry-header">
+                            <div>
+                                <span class="text-cobalt font-bold block">DRESIO Limited • Hong Kong</span>
+                                <h3 class="font-serif text-lg font-normal text-ink">Exercise AI Scientist (R&D Intern)</h3>
+                            </div>
+                            <span class="text-slate-400 text-[10px]"><span class="career-date-part">JUN 2026</span> <span class="career-date-part">to AUG 2026</span></span>
+                        </div>
+                        <ul class="space-y-1 text-slate-600 list-disc list-inside pt-1">
+                            <li>Integrated pose-detection API into digital health apps and websites using AI coding agents.</li>
+                            <li>Engineered movement criteria & MSK screening scoring logic for multi-site gym deployment.</li>
+                            <li>Tested landmark tracking reliability across 10+ participants under joint occlusion and varying body proportions.</li>
+                        </ul>
+                    </div>
+
+                    <!-- ORB Sport -->
+                    <div class="career-entry">
+                        <div class="career-entry-header">
+                            <div>
+                                <span class="text-cobalt font-bold block">ORB Sport • London, UK</span>
+                                <h3 class="font-serif text-lg font-normal text-ink">Sport Scientist Placement</h3>
+                            </div>
+                            <span class="text-slate-400 text-[10px]"><span class="career-date-part">SEP 2025</span> <span class="career-date-part">to JUN 2026</span></span>
+                        </div>
+                        <ul class="space-y-1 text-slate-600 list-disc list-inside pt-1">
+                            <li>Co-designed a repeated-measures validation study comparing ORB smart mouthguard HR against Polar ECG straps, with a final sample of 8 participants (n=8).</li>
+                            <li>Operated COSMED cardiopulmonary metabolic cart with OMNIA software during treadmill VO2max tests.</li>
+                            <li>Analyzed data from approximately 20 participants during the placement, using Python, MAE, RMSE, and Bland-Altman agreement plots.</li>
+                        </ul>
+                    </div>
+
+                    <!-- The Fighting Physiotherapist -->
+                    <div class="career-entry">
+                        <div class="career-entry-header">
+                            <div>
+                                <span class="text-cobalt font-bold block">The Fighting Physiotherapist • London, UK</span>
+                                <h3 class="font-serif text-lg font-normal text-ink">Sports Performance & Rehab Placement</h3>
+                            </div>
+                            <span class="text-slate-400 text-[10px]">FEB 2024</span>
+                        </div>
+                        <ul class="space-y-1 text-slate-600 list-disc list-inside pt-1">
+                            <li>Observed assessment and rehabilitation of 10+ athletes and patients; used force plates, dynamometers, and goniometry to quantify asymmetry and rehabilitation progress.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Academic & Leadership -->
+                <div class="career-academic">
+                    <span class="text-xs font-mono uppercase text-slate-400 block font-bold">ACADEMIC & LEADERSHIP</span>
+
+                    <div class="academic-card academic-degree" data-academic-identity="ucl">
+      <div class="academic-identity-degree-header"><span class="academic-identity-date">SEP 2023 to JUN 2026 • LONDON</span><img class="academic-identity-logo academic-identity-ucl" src="/assets/academic/ucl.svg" width="1394" height="391" alt="" loading="lazy" decoding="async"></div>
+                        <h3 class="font-serif text-xl font-normal text-ink">University College London</h3>
+                        <p class="font-bold text-cobalt">BSc (Hons) Sport & Exercise Medical Sciences</p>
+                        
+                        <div class="p-2.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 font-bold">
+                            Grade: First Class Honors<br>
+                            ★ Nominated for Dean's Research Prize
+                        </div>
+
+                        <details class="academic-modules"><summary>View all modules</summary><div class="module-years"><div><h4>2023/24</h4><ul><li>Foundations in Human Physiology and Cellular Biology</li><li>Cardiovascular and Respiratory Function in Health and Disease</li><li>The Gut, Liver and Drug Metabolism</li><li>Kidneys, Hormones and Fluid Balance</li><li>Data Interpretation and Evaluation of Science</li><li>Musculoskeletal Systems in Health and Disease</li><li>Cardiorespiratory Exercise Physiology</li><li>Functional Anatomy & Medical Imaging in Sport & Exercise Medicine</li></ul></div><div><h4>2024/25</h4><ul><li>Molecular Basis of Disease</li><li>The Nervous System and Neurological Diseases</li><li>Pharmacology and Drug Action</li><li>Nutrition and Metabolism 2</li><li>Statistics for Medical Scientists</li><li>Muscle Physiology and Sports Strength and Conditioning</li><li>Infection, Inflammation and Repair</li><li>Sport Psychology</li></ul></div><div><h4>2025/26</h4><ul><li>Exercise Medicine</li><li>Sport & Exercise Performance Optimisation</li><li>Injury Management and Rehabilitation</li><li>Work Placement</li><li>Exercise Neuroscience</li><li>Research Project</li></ul></div></div></details>
+                    </div>
+
+                    <!-- UCL Muay Thai VP -->
+                    <div class="academic-card academic-society" data-academic-identity="muay-thai">
+      <div class="academic-identity-header">
+        <img class="academic-identity-logo" src="/assets/academic/muay-thai.png" width="256" height="256" alt="" loading="lazy" decoding="async">
+        <div class="academic-identity-details"><span class="academic-identity-name">UCL Muay Thai Club</span><span class="academic-identity-date">JUN 2024 to JUN 2026</span></div>
+      </div>
+      <h3>Vice President</h3>
+      <p class="text-slate-600">
+                            Led operations for 200+ member society; managed committee logistics for events selling <strong>600+ tickets</strong> (UCL Fight Night).
+                        </p>
+    </div>
+<div class="academic-card academic-society" data-academic-identity="spanish-latin-american">
+      <div class="academic-identity-header">
+        <img class="academic-identity-logo" src="/assets/academic/spanish-latin-american.png" width="256" height="254" alt="" loading="lazy" decoding="async">
+        <div class="academic-identity-details"><span class="academic-identity-name">Spanish and Latin American Society</span><span class="academic-identity-date">JUN 2024 to JUN 2025</span></div>
+      </div>
+      <h3>Head of Cultural Events</h3>
+      
+    </div>
+<div class="academic-card academic-society" data-academic-identity="surgery-interventional">
+      <div class="academic-identity-header">
+        <img class="academic-identity-logo" src="/assets/academic/surgery-interventional.png" width="256" height="256" alt="" loading="lazy" decoding="async">
+        <div class="academic-identity-details"><span class="academic-identity-name">Surgery and Interventional Science Society</span><span class="academic-identity-date">JUN 2024 to JUN 2025</span></div>
+      </div>
+      <h3>Undergraduate Officer</h3>
+      
+    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 04: CONTACT FORM -->
+    <section id="contact" class="design-contact">
+      <div class="transition-contact-edge max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-hidden="true"><span class="transition-contact-line" data-section-transition="line"></span></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="design-contact-grid">
+          <div class="design-contact-copy" data-section-transition="copy">
+            <span class="design-section-label"><span aria-hidden="true">03</span>Contact</span>
+            <h2>Get In Touch</h2>
+          </div>
+          <div class="design-contact-actions" data-section-transition="actions">
+            <span class="design-contact-label">Email address</span>
+            <a class="design-contact-email" href="mailto:josemiguel.sorandocampillo@gmail.com" aria-label="josemiguel.sorandocampillo@gmail.com"><span>josemiguel.sorandocampillo<wbr>@gmail.com</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+            <div class="design-contact-buttons">
+              <button type="button" onclick="copyEmailAction()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg><span>Copy email</span></button>
+              <a href="https://www.linkedin.com/in/jos%C3%A9-miguel-s-36636b281" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-6 border-t border-hairline font-mono text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div>
+                © 2026 José Miguel Sorando Campillo
+            </div>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div role="status" aria-live="polite" id="toastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none font-mono text-xs"></div>
+
+    <!-- JAVASCRIPT APP DATA & INTERACTIVITY -->
+    <script>
+        /* -------------------------------------------------------------
+         * PROJECT DATASET (STANDARDIZED: GOAL, PROTOCOL, OUTCOME ONLY)
+         * ------------------------------------------------------------- */
+        const PROJECTS = [
+            {
+                id: "PRJ-01",
+                category: "ai",
+                title: "Exercise AI & Movement Analysis",
+                svgType: "dresio",
+                externalUrl: "https://www.dresio.io/",
+                goal: "Integrate camera pose-detection API for body-controlled digital health exercises & automated functional movement screening.",
+                protocol: "Python, JavaScript, Pixi.js, Camera Vision API, Git, FMS Logic.",
+                outcome: "Validated pose tracking across 10+ participants; deployed scoring criteria across a multi-site gym platform."
+            },
+            {
+                id: "PRJ-02",
+                category: "ai",
+                title: "Interpretable XGBoost Model of Blood Glucose Prediction",
+                svgType: "glucose",
+                goal: "Predict 2-hour postprandial glycemic response in free-living night-shift workers combining CGM, sleep & dietary metrics.",
+                protocol: "Python, XGBoost, GroupKFold CV, SHAP explainable AI, pandas, Continuous Glucose Monitors (CGM), MyFood24, Garmin.",
+                outcome: "First Class dissertation investigating physiological, dietary, sleep, and behavioral contributors using SHAP."
+            },
+            {
+                id: "PRJ-03",
+                category: "wearable_performance",
+                title: "PPG-Enabled Mouthguard Validation in Muay Thai",
+                svgType: "orbsport",
+                externalUrl: "https://orbsport.com/",
+                goal: "Quantify in-mouth optical heart rate measurement error against Polar ECG reference straps in combat sport athletes.",
+                protocol: "Repeated-measures study with a final sample of 8 participants (n=8). COSMED Metabolic Cart, OMNIA Software, Polar Chest Strap, Treadmill Protocol, Python (MAE, RMSE, Bland-Altman).",
+                outcome: "During the placement, analyzed data from approximately 20 participants and quantified heart-rate measurement error against reference monitors using MAE, RMSE, and agreement analysis."
+            },
+            {
+                id: "PRJ-04",
+                category: "ai",
+                title: "Multi-Agent AI Healthcare Assistant",
+                svgType: "agents",
+                imgAlt: "Team PharmaMiku Certificate",
+                goal: "Develop a multi-agent AI prototype to simplify medication management for people with low digital literacy.",
+                protocol: "Python, AWS-based agents, Valyu API, Git. Four-person team; 48-hour hackathon.",
+                outcome: "£500 Public Choice Award at The Great Agent Hack 25/26. Hackathon prototype, not a clinically validated product."
+            },
+            {
+                id: "PRJ-05",
+                category: "wearable_performance",
+                title: "Human Performance Lab",
+                labTitle: "Ergogenic Aids Study (Coursework)",
+                labExperiences: [
+                    {title: "Exercise testing and wearable validation", context: "ORB Sport · Sport Scientist Placement", body: "Operated COSMED cardiopulmonary metabolic cart with OMNIA software during treadmill VO2max tests. Co-designed a repeated-measures validation study with a final sample of 8 participants (n=8), comparing the ORB mouthguard against Polar ECG straps. During the placement, analyzed data from approximately 20 participants using Python, MAE, RMSE and Bland–Altman plots."},
+                    {title: "Movement and strength assessment", context: "The Fighting Physiotherapist · Placement", body: "Observed assessment and rehabilitation of athletes and patients; used force plates, handheld dynamometers and goniometry to assess asymmetry and rehabilitation progress."}
+                ],
+                svgType: "cherry",
+                imgAlt: "VO2 mask and laboratory treadmill with overhead safety support",
+                goal: "Investigate the acute ergogenic and biomarker effects of tart cherry juice supplementation prior to high-intensity 1km sprint performance.",
+                protocol: "Randomized, double-blinded crossover trial (n=13), standardized treadmill protocols, heart-rate monitoring, and capillary lactate and glucose sampling.",
+                outcome: "Designed and delivered the trial and physiological testing as part of UCL laboratory coursework."
+            },
+            {
+                id: "PRJ-06",
+                category: "ai",
+                title: "Celonis Process Mining in Health Informatics",
+                svgType: "process",
+                goal: "Uncover workflow bottlenecks and procedural deviations during central venous catheterization clinical training.",
+                protocol: "Celonis Process Mining Software, Event Log Analytics, Healthcare Workflow Optimization.",
+                outcome: "Analyzed training workflows to identify inefficiencies and translate patterns into actionable insights."
+            }
+        ];
+
+        /* -------------------------------------------------------------
+         * SVG VECTOR BRAND LOGOS AND VISUALS
+         * ------------------------------------------------------------- */
+        function getSVGVisual(type) {
+            const designs = {
+                dresio: {label:'MOVEMENT INTELLIGENCE', name:'DRESIO', body:`
+                  <defs><linearGradient id="dresio-body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c1d9f0"/><stop offset=".5" stop-color="#729bbd"/><stop offset="1" stop-color="#355a7c"/></linearGradient></defs>
+                  <g fill="none" stroke="#567b9b" stroke-width=".7" opacity=".45"><path d="M95 32H81V149H95M305 32H319V149H305M91 157H309"/><ellipse cx="201" cy="160" rx="86" ry="5"/><path d="M201 23V157" stroke-dasharray="2 5"/></g>
+                  <g fill="url(#dresio-body)" stroke="#bdd4e7" stroke-width=".65" stroke-linejoin="round">
+                    <path d="M215 25C220 20 231 21 234 29L235 35L239 39L234 42L233 49L225 51L222 59L211 55L215 46C208 43 208 32 215 25Z"/>
+                    <path d="M211 52C202 52 196 59 193 70L182 96C181 102 184 109 191 113L207 108L213 89L224 71C228 62 222 57 211 52Z"/>
+                    <path d="M216 59C221 57 226 61 225 67L217 89L244 99C248 101 251 104 249 107L242 108L210 98C206 97 204 93 206 87L211 65Z"/>
+                    <path d="M201 60C205 58 209 63 206 68L189 85L175 67L169 62L165 65L168 73L184 94C187 98 192 97 196 93L210 79" opacity=".65"/>
+                    <path d="M198 103C205 101 211 105 216 111L237 131C241 135 240 140 239 145L235 156L248 157C253 158 255 162 252 164H225L224 158L227 140L203 125L189 116Z"/>
+                    <path d="M184 102C191 99 198 107 196 114L180 135C176 140 170 141 163 144L143 157L145 160C148 163 145 166 142 166H125C120 165 123 159 128 156L158 132L174 111Z"/>
+                  </g>
+                  <g fill="none" stroke="#d5e7f2" stroke-width=".7" opacity=".45"><path d="M213 59L201 83L191 104M191 112L170 135L139 156M203 113L232 137L229 156M218 66L212 91L243 104"/></g>
+                  <g fill="none" stroke="#66d8d2" stroke-width="1.1"><path d="M201 104A21 21 0 0 1 213 124M218 130A16 16 0 0 1 225 148M202 83A13 13 0 0 0 220 99"/><path d="M194 108L117 91H97M232 138L277 117H303M214 91L271 66H303" stroke-width=".7" opacity=".65"/></g>
+                  <g fill="#13263b" stroke="#8cf1e3" stroke-width="1.5"><circle cx="194" cy="108" r="3"/><circle cx="232" cy="138" r="3"/><circle cx="214" cy="91" r="3"/><circle cx="218" cy="63" r="2.5"/><circle cx="169" cy="136" r="2.5"/><circle cx="230" cy="157" r="2.5"/></g>
+                  <g fill="#8cf1e3"><circle cx="97" cy="91" r="1.5"/><circle cx="303" cy="117" r="1.5"/><circle cx="303" cy="66" r="1.5"/></g>`},
+                orbsport: {label:'WEARABLE VALIDATION',name:'ORB SPORT',body:`<path d="M20 98H72L84 85L95 112L110 50L127 143L142 93H187L199 79L211 113L226 42L243 146L257 94H305L319 81L331 109L347 52L362 132L377 94H400" fill="none" stroke="#63cfca" stroke-width="2.5"/><path d="M20 105H72L87 93L99 121L113 61L130 150L145 102H190L202 90L215 124L230 54L247 153L260 104H307L322 92L335 120L351 64L366 144L380 105H400" fill="none" stroke="#63cfca" opacity=".25"/>`},
+                glucose: {label:'INTERPRETABLE MACHINE LEARNING',name:'GLUCOSE / ML',body:`<path d="M25 133C65 133 67 120 101 123S141 44 180 49S228 136 272 119S329 68 375 93" fill="none" stroke="#8e9dff" stroke-width="3"/><path d="M25 143C65 143 70 128 103 133S143 57 180 64S230 149 272 132S329 83 375 106" fill="none" stroke="#8e9dff" opacity=".3" stroke-dasharray="4 5"/><circle cx="180" cy="49" r="5" fill="#c1caff"/><path d="M180 49V157" stroke="#8e9dff" opacity=".25"/>`},
+                agents: {label:'ACCESSIBLE HEALTH AI',name:'PHARMAMIKU',body:`<g stroke="#85a8ff" stroke-width="1.5"><path d="M200 90L133 47M200 90L267 47M200 90L133 133M200 90L267 133"/>${[[133,47],[267,47],[133,133],[267,133]].map(([x,y])=>`<rect x="${x-13}" y="${y-13}" width="26" height="26" rx="7" fill="#172944"/>`).join('')}<rect x="176" y="66" width="48" height="48" rx="13" fill="#254573"/></g><g fill="#b4d1ff"><circle cx="191" cy="89" r="3"/><circle cx="209" cy="89" r="3"/></g><path d="M191 101H209" stroke="#b4d1ff"/>`},
+                cherry: {label:'EXERCISE PHYSIOLOGY',name:'PERFORMANCE / LAB',body:`<g fill="none" stroke="#f49fae" stroke-width="2"><path d="M164 87Q164 46 212 32M222 98Q235 57 212 32M212 32Q242 21 263 38Q234 52 212 32"/><circle cx="160" cy="111" r="25" fill="#d95772" fill-opacity=".16"/><circle cx="220" cy="122" r="25" fill="#d95772" fill-opacity=".16"/></g><path d="M75 148H119M280 148H325" stroke="#f49fae" opacity=".3"/>`},
+                process: {label:'HEALTHCARE PROCESS MINING',name:'CELONIS',body:`<g stroke="#74c5d2" fill="#132e40"><circle cx="75" cy="94" r="16"/><rect x="142" y="77" width="50" height="34" rx="4"/><rect x="260" y="48" width="60" height="30" rx="4"/><rect x="260" y="113" width="60" height="30" rx="4"/><path d="M91 94H142M192 94L260 63M192 94L260 128" fill="none"/></g>`}
+            };
+            const d=designs[type] || designs.process;
+            if (type === 'cherry') return `<div class="project-visual dresio-render lab-concept"><img src="/assets/human-performance-lab.svg" alt="VO2 mask and laboratory treadmill with overhead safety support" loading="lazy" decoding="async"><div class="visual-label"><span>${d.label}</span></div><div class="visual-footer"><strong>${d.name}</strong><span>CONCEPT VISUAL</span></div></div>`;
+            if (type === 'process') return `<div class="project-visual pharma-visual"><img src="/assets/celonis-${document.documentElement.lang}.svg" alt="Celonis" loading="lazy" decoding="async"></div>`;
+            if (type === 'agents') return `<div class="project-visual pharma-visual"><img src="/assets/pharmamiku-${document.documentElement.lang}.svg" alt="PharmaMiku · Public Choice Award · Great Agent Hack 2025" loading="lazy" decoding="async"></div>`;
+            const imageAsset = type === 'dresio' ? 'dresio-lunge-two-legs' : type === 'glucose' ? 'glucose-ensemble' : type;
+            const brand = type === 'dresio' ? '<span class="brand-badge brand-dresio"><img src="/assets/dresio-logo.png" alt="DRESIO"><strong>DRESIO</strong></span>' : type === 'orbsport' ? '<span class="brand-badge brand-orb"><img src="/assets/orb-logo.svg" alt="ORB Sport"></span>' : `<strong>${d.name}</strong>`;
+            if (type === 'orbsport') return `<div class="project-visual orb-products"><div class="orb-product-pair"><img class="orb-mouthguard" src="/assets/orb-mouthguard-cutout.webp" alt="ORB Sport" loading="lazy" decoding="async"><img class="polar-strap" src="/assets/polar-h10-strap.webp" alt="Polar H10" loading="lazy" decoding="async"></div><div class="visual-label"><span>${d.label}</span></div><div class="visual-footer">${brand}<span>ORB SPORT / POLAR H10</span></div></div>`;
+            return `<div class="project-visual dresio-render${type === 'dresio' ? ' dresio-lunge' : type === 'glucose' ? ' glucose-concept' : ''}"><img src="/assets/${imageAsset}.${type === 'glucose' ? 'svg' : type === 'dresio' ? 'webp' : 'png'}?v=color-2" alt="" loading="lazy" decoding="async"><div class="visual-label"><span>${d.label}</span></div><div class="visual-footer">${brand}<span>CONCEPT VISUAL</span></div></div>`;
+
+            return `<div class="project-visual"><div class="visual-label"><span>${d.label}</span><span aria-hidden="true">↗</span></div><svg viewBox="0 0 400 180" aria-hidden="true"><defs><pattern id="grid-${type}" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#7997c1" stroke-opacity=".09"/></pattern></defs><rect width="400" height="180" fill="url(#grid-${type})"/>${d.body}</svg><div class="visual-footer"><strong>${d.name}</strong><span>CONCEPT VISUAL</span></div></div>`;
+        }
+
+        /* Helper to get banner HTML using actual images when available */
+        function getProjectBanner(p) {
+            if (p.imgSrc) {
+                return `<div class="w-full h-40 bg-slate-900 border-b border-hairline overflow-hidden flex items-center justify-center">
+                    <img src="${p.imgSrc}" alt="${p.imgAlt}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                </div>`;
+            }
+            const visual = document.createElement('template');
+            visual.innerHTML = getSVGVisual(p.svgType);
+            visual.content.querySelectorAll('.visual-label, .visual-footer > strong, .visual-footer > span:not(.brand-badge)').forEach(label => label.remove());
+            visual.content.querySelectorAll('.visual-footer').forEach(footer => {
+                if (!footer.children.length) footer.remove();
+            });
+            return visual.innerHTML;
+        }
+
+        /* -------------------------------------------------------------
+         * RENDER PROJECTS GRID
+         * ------------------------------------------------------------- */
+        function renderProjects() {
+            const grid = document.getElementById('projectsGrid');
+            const es = document.documentElement.lang === 'es';
+            const dialog = document.createElement('dialog');
+            dialog.className = 'project-dialog';
+            dialog.setAttribute('aria-labelledby', 'project-dialog-title');
+            dialog.innerHTML = '<div class="project-dialog-bar"><button type="button" class="project-dialog-close" autofocus><span>' + (es ? 'Cerrar' : 'Close') + '</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6L18 18M18 6L6 18"/></svg></button></div><div class="project-dialog-content"></div>';
+            document.body.appendChild(dialog);
+            const content = dialog.querySelector('.project-dialog-content');
+            const closeButton = dialog.querySelector('.project-dialog-close');
+            let opener;
+            let previousOverflow;
+            closeButton.addEventListener('click', () => dialog.close());
+            dialog.addEventListener('keydown', e => {
+                if (e.key !== 'Tab') return;
+                const controls = [...dialog.querySelectorAll('button, a[href]')];
+                const first = controls[0], last = controls[controls.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault(); last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault(); first.focus();
+                }
+            });
+            let backdropStart = false;
+            const outside = e => {
+                const r = dialog.getBoundingClientRect();
+                return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+            };
+            dialog.addEventListener('pointerdown', e => { backdropStart = e.target === dialog && outside(e); });
+            dialog.addEventListener('click', e => {
+                if (backdropStart && e.target === dialog && outside(e)) dialog.close();
+                backdropStart = false;
+            });
+            dialog.addEventListener('close', () => {
+                document.body.style.overflow = previousOverflow;
+                opener?.focus({preventScroll:true});
+            });
+            grid.innerHTML = '';
+            PROJECTS.forEach((p, index) => {
+                const card = document.createElement('div');
+                card.className = 'project-card project-card-compact border border-hairline bg-cardLight flex flex-col overflow-hidden hover:border-cobalt transition-colors group';
+                card.innerHTML = getProjectBanner(p) + '<div class="p-5"><h3><button type="button" class="project-open" aria-haspopup="dialog">' + p.title + '</button></h3></div>';
+                const button = card.querySelector('.project-open');
+                button.addEventListener('click', () => {
+                    opener = button;
+                    const siteLabel = p.externalUrl ? (p.externalUrl.includes('dresio') ? 'VISIT DRESIO.IO' : 'VISIT ORBSPORT.COM') : '';
+                    content.innerHTML = `
+                        <div class="project-dialog-visual">${getProjectBanner(p)}</div>
+                        <h2 id="project-dialog-title">${p.title}</h2>
+                        ${p.labExperiences ? `<div class="lab-experiences">
+                            <div class="lab-experience"><h3>${p.labTitle}</h3><p class="lab-context">UCL · Laboratory coursework</p><p>${p.goal}</p><p>${p.protocol}</p><p>${p.outcome}</p></div>
+                            ${p.labExperiences.map(item => `<div class="lab-experience"><h3>${item.title}</h3><p class="lab-context">${item.context}</p><p>${item.body}</p></div>`).join('')}
+                        </div>` : `<div class="project-dialog-facts">
+                            <div><strong>GOAL:</strong><p>${p.goal}</p></div>
+                            <div><strong>PROTOCOL:</strong><p>${p.protocol}</p></div>
+                            <div><strong>OUTCOME:</strong><p>${p.outcome}</p></div>
+                        </div>`}
+                        ${p.externalUrl ? `<a class="project-dialog-link" href="${p.externalUrl}" target="_blank" rel="noopener noreferrer" title="Visit ${p.title}">${siteLabel} ↗</a>` : ''}
+                    `;
+                    previousOverflow = document.body.style.overflow;
+                    document.body.style.overflow = 'hidden';
+                    dialog.showModal();
+                    dialog.scrollTop = 0;
+                    closeButton.focus({preventScroll:true});
+                });
+                grid.appendChild(card);
+            });
+        }
+
+        /* -------------------------------------------------------------
+         * TOAST & COPY ACTION
+         * ------------------------------------------------------------- */
+        function triggerToast(msg) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = "pointer-events-auto px-4 py-2.5 bg-ink text-alabaster border border-hairline shadow-xl font-mono text-xs";
+            toast.innerHTML = `✓ ${msg}`;
+            container.appendChild(toast);
+
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        function copyEmailAction() {
+            const email = "josemiguel.sorandocampillo@gmail.com";
+            const el = document.createElement('textarea');
+            el.value = email;
+            document.body.appendChild(el);
+            el.select();
+            const copied = document.execCommand('copy');
+            document.body.removeChild(el);
+            triggerToast(copied ? "Email copied to clipboard: " + email : "Copy unavailable. Please select the email address above.");
+        }
+
+        // The shared areas module renders projects.
+    </script>
+</body>
+</html>
+
+
