@@ -14,7 +14,8 @@ async function prepare(dir) {
     const file = path.join(dir, entry.name);
     if (entry.isDirectory()) { await prepare(file); continue; }
     if (!/\.(html|css|js|mjs|json|svg)$/.test(file)) continue;
-    const content = (await readFile(file, 'utf8')).replace(localPath, '$1/portfolio/');
+    const content = (await readFile(file, 'utf8')).replace(localPath, '$1/portfolio/')
+      .replace(/(\.m?js\?v=[\w.-]+)/g, '$1-pages2');
     await writeFile(file, content);
     if (/\.(js|mjs)$/.test(file)) execFileSync(process.execPath, ['--check', file]);
     if (file.endsWith('.html')) {
