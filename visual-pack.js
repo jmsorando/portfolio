@@ -1,0 +1,65 @@
+(() => {
+  // Keep semantic headings intact and readable if JS or observers are unavailable.
+  if(!('IntersectionObserver' in window))return;
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  const hero=document.querySelector('.hero-illustration');
+  const heroSvg=hero?.querySelector('.hero-runner');
+  const mobile=matchMedia('(max-width:900px)');
+  const frameHero=()=>heroSvg?.setAttribute('viewBox',mobile.matches?'0 0 1320 1320':'0 0 1440 1320');
+  frameHero();mobile.addEventListener('change',frameHero);
+  const slides=[...document.querySelectorAll('.hero-sport-slide')];
+  const toggle=document.querySelector('.hero-sport-toggle');
+  let slideIndex=0,timer=null,transitionTimer=null,heroVisible=false,paused=false,ready=false;
+  const setSlide=index=>{slideIndex=index;slides.forEach((slide,i)=>{
+    slide.style.visibility=i===index?'visible':'hidden';
+    slide.classList.toggle('is-active',i===index);
+  });};
+  function nextSlide(){
+    // Fade out fully before showing the next figure; never crossfade bodies.
+    slides[slideIndex].classList.remove('is-active');
+    transitionTimer=setTimeout(()=>{
+      transitionTimer=null;
+      setSlide((slideIndex+1)%slides.length);
+    },650);
+  }
+  function syncSequence(){
+    clearInterval(timer);timer=null;
+    clearTimeout(transitionTimer);transitionTimer=null;
+    if(!toggle)return;
+    toggle.hidden=reduced.matches||!ready;
+    if(reduced.matches){setSlide(0);return;}
+    setSlide(slideIndex);
+    if(ready&&heroVisible&&!paused&&!document.hidden)timer=setInterval(nextSlide,7000);
+  }
+  if(hero&&toggle&&slides.length>1){
+    toggle.addEventListener('click',()=>{paused=!paused;toggle.setAttribute('aria-pressed',String(paused));toggle.textContent=paused?toggle.dataset.resume:toggle.dataset.pause;syncSequence();});
+    new IntersectionObserver(entries=>{heroVisible=entries[0].isIntersecting;syncSequence();},{threshold:.15}).observe(hero);
+    document.addEventListener('visibilitychange',syncSequence);
+    reduced.addEventListener('change',syncSequence);
+    Promise.all(slides.slice(1).map(slide=>{const image=new Image();image.src=slide.querySelector('image').getAttribute('href');return image.decode();})).then(()=>{ready=true;syncSequence();}).catch(()=>{ready=false;syncSequence();});
+  }
+  const headings=[...document.querySelectorAll('#projects h2,#experience h2,#contact h2')];
+  const reveal=new IntersectionObserver(entries=>entries.forEach(({target,isIntersecting})=>{
+    if(isIntersecting){target.classList.add('in');reveal.unobserve(target);}
+  }),{threshold:.4});
+  if(!reduced.matches)headings.forEach(h=>{
+    // Walk text nodes so future nested markup and manual line breaks survive.
+    const walker=document.createTreeWalker(h,NodeFilter.SHOW_TEXT);
+    const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+    let i=0;for(const node of nodes){
+      const fragment=document.createDocumentFragment();
+      for(const word of node.textContent.split(/(\s+)/)){
+        if(!word)continue;
+        if(/^\s+$/.test(word)){fragment.append(document.createTextNode(word));continue;}
+        const span=document.createElement('span');span.className='w';span.textContent=word;
+        span.style.setProperty('--word-delay',`${Math.min(i++*60,420)}ms`);fragment.append(span);
+      }
+      node.replaceWith(fragment);
+    }
+    h.classList.add('kinetic','kinetic-ready');reveal.observe(h);
+  });
+  const signals=[...document.querySelectorAll('.ecg')];
+  const signalObserver=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('is-visible',e.isIntersecting)),{threshold:.1});
+  signals.forEach(el=>signalObserver.observe(el));
+  reduced.addEventListener('change',()=>{if(reduced.matches){headings.forEach(h=>h.classList.add('in'));reveal.disconnect();}});
+})();

@@ -13,7 +13,7 @@ export function responsiveMarkup(markup, sizes, loading='lazy') {
     const url=tag.match(/\bsrc="([^"]+)"/)?.[1]?.split('?')[0];
     const record=IMAGES[url];
     if(!record)return tag;
-    tag=tag.replace(/\s(?:src|srcset|sizes|width|height|loading|decoding)="[^"]*"/g,'');
+    tag=tag.replace(/\s(?:src|srcset|sizes|width|height|loading|decoding)="[^"]*"/portfolio/g,'');
     const srcset=record.variants.map(v=>`${v.src} ${v.width}w`).join(', ');
     return tag.replace(/\/?\s*>$/,` src="${record.variants[0].src}" srcset="${srcset}" sizes="${sizes}" width="${record.width}" height="${record.height}" loading="${loading}" decoding="async">`);
   });
