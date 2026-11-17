@@ -1,7 +1,7 @@
-import {MATERIALS, nextZoom, imageDimensions} from '/portfolio/projects/model.mjs?v=9';
-import {AREAS, PROJECT_LABELS, areaProjects, parentView} from './areas-model.mjs?v=11';
-import {responsiveMarkup, AREA_SIZES, DETAIL_SIZES, selectionSizes, documentSource,documentDimensions} from '/portfolio/projects/image-delivery.mjs?v=5';
-import {createImageWarmer,loadDocumentImage} from '/portfolio/projects/popup-image-loading.mjs?v=1';
+import {MATERIALS, nextZoom, imageDimensions} from '/portfolio/projects/model.mjs?v=9-pages2';
+import {AREAS, PROJECT_LABELS, areaProjects, parentView} from './areas-model.mjs?v=11-pages2';
+import {responsiveMarkup, AREA_SIZES, DETAIL_SIZES, selectionSizes, documentSource,documentDimensions} from '/portfolio/projects/image-delivery.mjs?v=5-pages2';
+import {createImageWarmer,loadDocumentImage} from '/portfolio/projects/popup-image-loading.mjs?v=1-pages2';
 
 const lang = document.documentElement.lang === 'es' ? 'es' : 'en';
 const copy = {

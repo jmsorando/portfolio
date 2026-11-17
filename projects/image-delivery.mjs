@@ -1,4 +1,4 @@
-import {IMAGES, DOCUMENT_IMAGES, DOCUMENT_DIMENSIONS} from './image-manifest.mjs?v=5';
+import {IMAGES, DOCUMENT_IMAGES, DOCUMENT_DIMENSIONS} from './image-manifest.mjs?v=5-pages2';
 
 // Width hints describe the existing layout; the browser chooses for viewport + DPR.
 export const AREA_SIZES='(min-width: 1280px) 390px, (min-width: 1024px) calc((100vw - 112px) / 3), (min-width: 768px) calc((100vw - 88px) / 2), calc(100vw - 64px)';
