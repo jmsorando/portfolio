@@ -33,9 +33,10 @@ for(const lang of ['en','es']){
             <image href="/assets/mesh-celebrate.png" width="1536" height="1024" filter="url(#contact-mesh-blue)"/>
           </svg>
         </figure>$2`);
-  html=html.replace('</head>','<link rel="stylesheet" href="/visual-pack.css?v=9"><script src="/visual-pack.js?v=5" defer></script></head>');
+  html=html.replace('</head>','<link rel="stylesheet" href="/visual-pack.css?v=9"><script src="/visual-pack.js?v=6" defer></script></head>');
   await writeFile(`dist/${lang}/index.html`,html);
 }
 console.log('Built decorative movement figures, signal and progressive heading reveals.');
+
 
 

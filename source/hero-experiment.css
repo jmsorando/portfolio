@@ -13,6 +13,10 @@ html body.hero-experiment > section.portfolio-hero::after{
 @media(max-width:900px){
   html body.hero-experiment > section.portfolio-hero::after{height:360px;background-size:150% 100%}
 }
+@media(min-width:901px){
+  html body.hero-experiment > section.portfolio-hero .hero-copy p:first-of-type{margin-top:112px!important}
+  html body.hero-experiment > section.portfolio-hero::after{top:var(--hero-wave-center,calc(50% - 70px))}
+}
 @media(forced-colors:active){
   html body.hero-experiment > section.portfolio-hero::after{display:none}
 }
@@ -142,4 +146,5 @@ html body.hero-experiment .portfolio-hero .hero-layout{min-height:0}
  .hero-experiment header nav a[aria-current="location"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
  .hero-experiment .reading-progress{background:Highlight;forced-color-adjust:none}
 }
+
 
