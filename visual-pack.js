@@ -7,6 +7,19 @@
   const mobile=matchMedia('(max-width:900px)');
   const frameHero=()=>heroSvg?.setAttribute('viewBox',mobile.matches?'0 0 1320 1320':'0 0 1440 1320');
   frameHero();mobile.addEventListener('change',frameHero);
+  // Keep the main wave halfway between the heading and paragraph in either language.
+  const heroSection=document.querySelector('.portfolio-hero');
+  const heroCopy=heroSection?.querySelector('.hero-copy');
+  const alignWave=()=>{
+    if(!heroCopy||mobile.matches)return;
+    const title=heroCopy.querySelector('h1').getBoundingClientRect();
+    const paragraph=heroCopy.querySelector('p').getBoundingClientRect();
+    heroSection.style.setProperty('--hero-wave-center',`${(title.bottom+paragraph.top)/2-heroSection.getBoundingClientRect().top}px`);
+  };
+  alignWave();
+  if(heroCopy&&'ResizeObserver' in window)new ResizeObserver(alignWave).observe(heroCopy);
+  mobile.addEventListener('change',alignWave);
+  document.fonts?.ready.then(alignWave);
   const slides=[...document.querySelectorAll('.hero-sport-slide')];
   let slideIndex=0,timer=null,transitionTimer=null,heroVisible=false,ready=false;
   const setSlide=index=>{slideIndex=index;slides.forEach((slide,i)=>{
