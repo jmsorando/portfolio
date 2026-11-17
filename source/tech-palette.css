@@ -1,0 +1,129 @@
+/* Cool analogous palette: cobalt action, cyan sensing, violet intelligence. */
+body.portfolio-design{
+  --tech-cyan:#67e8f9;--tech-violet:#c4b5fd;--tech-blue:#93c5fd;
+  --tech-night:#0b1426;--tech-panel:#111f33;
+}
+.portfolio-design ::selection{background:#c7d9ff;color:#10234a}
+/* A luminous counterpart to the navy project section; dark readable copy. */
+html body.portfolio-design > .portfolio-hero{
+  background:#fafaf8;
+  border-color:#c4d4ef;
+}
+html body.portfolio-design > .portfolio-hero::before{
+  content:"";position:absolute;inset:0 0 auto;height:2px;pointer-events:none;
+  background:linear-gradient(90deg,#2563eb,#22b8cf 55%,#8b5cf6);
+}
+html body.portfolio-design .portfolio-hero h1{color:#102344}
+html body.portfolio-design > .portfolio-hero .hero-copy p{
+  color:#3e526e;border-left:2px solid #8eafed;padding-left:18px;
+}
+html body.portfolio-design .portfolio-hero .ai-heading{
+  background-image:linear-gradient(100deg,#086e8e 0%,#1d4ed8 35%,#6941c6 65%,#1d4ed8 85%,#086e8e 100%);
+}
+html body.portfolio-design .explore-work{
+  padding:12px 20px;border-radius:8px;background:#1d4ed8;color:#fff;
+  box-shadow:0 5px 16px #2563eb24;text-decoration:none;
+  transition:background-color 180ms ease,box-shadow 180ms ease;
+}
+html body.portfolio-design .explore-work:hover{background:#1e40af;box-shadow:0 7px 22px #2563eb35}
+html body.portfolio-design .portfolio-hero .explore-work{
+  background:linear-gradient(115deg,#1d4ed8,#2545b8);border:1px solid #2756ce;
+  box-shadow:0 7px 20px #1d4ed825,inset 0 1px 0 #ffffff25;
+}
+html body.portfolio-design .portfolio-hero .explore-work:hover{background:#1e40af}
+html body.portfolio-design #projects{
+  background:var(--tech-night);
+  color:#f1f5ff;border-color:#263650;padding-top:56px!important;
+}
+.portfolio-design #projects h2{color:#f1f5ff}
+.portfolio-design #projects .design-section-label{color:#9dbfff}
+.portfolio-design #projects .design-section-label>span{color:#94a3bd}
+.portfolio-design #projects>div>div.border-b{border-color:#30415c}
+.portfolio-design #projectsGrid [data-area]{--area-accent:var(--tech-blue)}
+html body.portfolio-design #projectsGrid .project-card{
+  background:var(--tech-panel);border-color:#35445e!important;
+  border-top:3px solid var(--area-accent)!important;
+  box-shadow:0 12px 32px #03091730;
+}
+.portfolio-design #projectsGrid .project-card>.p-5{border-top:1px solid #30415c;background:#122139}
+html body.portfolio-design #projectsGrid .project-open{color:var(--area-accent)}
+html body.portfolio-design #projectsGrid .area-contents{color:#c1cde0}
+html body.portfolio-design #projectsGrid .project-card:hover{
+  border-color:var(--area-accent)!important;box-shadow:0 14px 36px #03091760;
+}
+html body.portfolio-design #projectsGrid .project-card:focus-within{outline-color:var(--area-accent)}
+html body.portfolio-design #experience{
+  background:#f5f7fa;
+  border-color:#cdd9ed;
+}
+.portfolio-design #experience h2{color:#102344}
+.portfolio-design #experience .career-professional>span,
+.portfolio-design #experience .career-academic>span{color:#1e4da6}
+.portfolio-design .career-professional::before{
+  width:2px;background:#6fa8e6;
+}
+.portfolio-design #experience .career-entry{
+  padding:22px 24px;margin-bottom:18px;background:#fff;
+  border:1px solid #cfdeef;border-radius:10px;
+  box-shadow:0 5px 20px #12345405;
+}
+.portfolio-design #experience .career-entry:last-child{padding-bottom:22px;margin-bottom:0}
+.portfolio-design #experience .career-entry::before{
+  top:28px;background:#6fa8e6;border-color:#6fa8e6;
+  box-shadow:0 0 0 5px #e7effb;
+}
+.portfolio-design #experience .career-entry-header>span{color:#4b607c}
+.portfolio-design #experience .career-entry-header>div>span{color:#1e4da6}
+.portfolio-design #experience .career-entry h3{color:#102344}
+.portfolio-design #experience .career-entry ul{color:#40536e}
+.portfolio-design #experience .career-entry li::marker{color:#1e4da6}
+.portfolio-design #experience .academic-card{
+  background:#fff;border-color:#cfdeef;
+  border-top:2px solid #6fa8e6;box-shadow:0 5px 20px #12345405;
+}
+.portfolio-design #experience .academic-degree{
+  border-top:3px solid #6fa8e6;
+  background:#fff;
+}
+.portfolio-design #experience .academic-card h3{color:#182b4a}
+.portfolio-design #experience .academic-card p{color:#40536e}
+.portfolio-design #experience .academic-degree>p{color:#1e4da6}
+.portfolio-design #experience .academic-card>span{color:#54627b}
+.portfolio-design #experience .academic-modules{border-color:#cdd9ed}
+.portfolio-design #experience .academic-modules summary{color:#2545a6}
+@media(max-width:767px){
+  .portfolio-design #experience .career-entry{padding:20px 18px}
+  .portfolio-design #experience .career-entry:last-child{padding-bottom:20px}
+  .portfolio-design #experience .career-entry::before{top:26px}
+}
+.portfolio-design #contact{
+  background:var(--tech-night);
+  border-top:1px solid #35537a;
+}
+.portfolio-design #contact .design-section-label{color:var(--tech-cyan)}
+.portfolio-design footer{background:var(--tech-night)}
+@media(forced-colors:active){
+  html body.portfolio-design #experience .career-entry,
+  html body.portfolio-design #experience .academic-card{
+    background:Canvas;border-color:CanvasText;box-shadow:none;
+  }
+  html body.portfolio-design #experience h2,
+  html body.portfolio-design #experience h3,
+  html body.portfolio-design #experience p,
+  html body.portfolio-design #experience ul,
+  html body.portfolio-design #experience span{color:CanvasText}
+  html body.portfolio-design #experience .career-entry::before{background:CanvasText;border-color:CanvasText;box-shadow:none}
+  html body.portfolio-design > .portfolio-hero{background:Canvas}
+  html body.portfolio-design > .portfolio-hero::before{display:none}
+  html body.portfolio-design .portfolio-hero h1,
+  html body.portfolio-design > .portfolio-hero .hero-copy p{color:CanvasText;border-color:CanvasText}
+  html body.portfolio-design .portfolio-hero .ai-heading{background:none;color:CanvasText;-webkit-text-fill-color:CanvasText}
+  html body.portfolio-design .portfolio-hero .explore-work{background:Canvas;color:LinkText;border-color:LinkText;box-shadow:none}
+  html body.portfolio-design #projects,html body.portfolio-design #experience,
+  html body.portfolio-design #projectsGrid .project-card,
+  .portfolio-design #projectsGrid .project-card>.p-5{background:Canvas;color:CanvasText;border-color:CanvasText!important}
+  .portfolio-design #projects h2,html body.portfolio-design #projectsGrid .area-contents{color:CanvasText}
+  html body.portfolio-design #projectsGrid .project-open,
+  html body.portfolio-design .explore-work{color:LinkText;background:Canvas}
+}
+

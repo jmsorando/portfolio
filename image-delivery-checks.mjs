@@ -35,7 +35,7 @@ assert.equal((lab.match(/data:image\/webp;base64/g)||[]).length,1,'Shared mask/t
 assert.equal((lab.match(/<use href="#lab-artwork"/g)||[]).length,2);
 for(const lang of ['en','es']){
   const html=await readFile(`dist/${lang}/index.html`,'utf8');
-  assert(html.includes('as="image" href="/assets/hero-runner-simple.webp" type="image/webp" fetchpriority="high"'));
+  assert(html.includes('as="image" href="/assets/mesh-run.jpg" type="image/jpeg" fetchpriority="high"'));
   assert(!/<link[^>]+rel="preload"[^>]+materials/.test(html),'Full documents are not downloaded on homepage load');
 }
 console.log('PASS: responsive widths, preserved artwork/alt text, smaller delivery files, retained originals, demand-loaded documents and deduplicated SVG raster.');

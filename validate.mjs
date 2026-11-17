@@ -6,9 +6,9 @@ for(const lang of ['en','es']){
  const html=await readFile(`dist/${lang}/index.html`,'utf8');
  assert(html.includes(`<html lang="${lang}"`));
  assert.equal((html.match(/<h1\b/g)||[]).length,1);
- assert(html.includes('/hero-scroll.js?v=3') && html.includes('/hero.css?v=17'));
+ assert(html.includes('/hero-scroll.js?v=3') && html.includes('/hero.css?v=22'));
  assert(html.includes('reading-progress') && html.includes('explore-work'));
- assert(html.includes('/assets/hero-runner-simple.webp'));
+ assert(html.includes('/assets/mesh-run.jpg'));
  assert(!html.includes('id="about"') && !html.includes('href="#about"') && !html.includes('href="/about.css"'),'Main pages must omit About and its stylesheet');
  assert(!html.includes('/preview/') && !html.includes('noindex') && !html.includes('Experimental hero preview'));
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]).filter(x=>!x.includes('${'));
@@ -16,7 +16,8 @@ for(const lang of ['en','es']){
  for(const match of html.matchAll(/href="#([^"]+)"/g))assert(ids.includes(match[1]),`Broken anchor ${match[1]}`);
  assert(html.includes(`data-language="${lang}" aria-label="${lang==='en'?'English':'Español'}" aria-current="page"`));
  assert(html.includes(`rel="canonical" href="https://jmsorando.github.io/portfolio/${lang}/"`));
- assert(!/7355|317093|hotmail|<form\b|\.jpg|\.pptx|\.pdf/.test(html),'Unexpected private data, form, or raw document link');
+ const privacyHtml=html.replaceAll('/assets/mesh-run.jpg','').replaceAll('/assets/mesh-box.jpg','');
+ assert(!/7355|317093|hotmail|<form\b|\.jpg|\.pptx|\.pdf/.test(privacyHtml),'Unexpected private data, form, or raw document link');
  const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(x=>x[1]).filter(Boolean);
  scripts.forEach(script=>new vm.Script(script));
  const app=scripts.find(s=>s.includes('const PROJECTS'));

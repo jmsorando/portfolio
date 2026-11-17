@@ -1,10 +1,37 @@
 /* Approved editorial hero shared by the homepages and review routes. */
+/* Signal curves cross behind the copy and wireframe at the hero midpoint. */
+html body.hero-experiment > section.portfolio-hero{
+  position:relative;isolation:isolate;
+}
+html body.hero-experiment > section.portfolio-hero::after{
+  content:"";position:absolute;inset:50% 0 auto;height:300px;
+  transform:translateY(-50%);z-index:-1;
+  background:url('/assets/hero-signal-waves.svg') center / 100% 100% no-repeat;
+  pointer-events:none;opacity:.45;
+}
+@media(max-width:900px){
+  html body.hero-experiment > section.portfolio-hero::after{height:360px;background-size:150% 100%}
+}
+@media(forced-colors:active){
+  html body.hero-experiment > section.portfolio-hero::after{display:none}
+}
+@media(prefers-reduced-motion:no-preference){
+  html body.hero-experiment > section.portfolio-hero::after{
+    inset-inline:-6%;
+    animation:hero-signal-drift 26s ease-in-out infinite alternate;
+    will-change:transform;
+  }
+}
+@keyframes hero-signal-drift{
+  from{transform:translate(-4%,calc(-50% - 10px))}
+  to{transform:translate(4%,calc(-50% + 10px))}
+}
 body.hero-experiment > section.portfolio-hero{
   background:#fafaf8;padding-block:32px 44px!important;overflow:hidden;
 }
 html body.hero-experiment .portfolio-hero .hero-layout{
   display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0;
-  position:relative;isolation:isolate;min-height:660px;align-items:center;
+  position:relative;min-height:660px;align-items:center;
 }
 html body.hero-experiment .portfolio-hero .hero-copy{
   grid-column:1 / 10;grid-row:1;position:relative;z-index:2;
@@ -23,11 +50,17 @@ html body.hero-experiment > section.portfolio-hero .hero-copy p{
   margin-top:32px!important;contain:none;color:#526174;
 }
 html body.hero-experiment .portfolio-hero .hero-illustration{
+  mix-blend-mode:multiply;
   grid-column:6 / -1;grid-row:1;width:100%;max-width:none;
   justify-self:end;margin-right:-15%;align-self:start;position:relative;z-index:1;
 }
 html body.hero-experiment .portfolio-hero .hero-runner{
   display:block;width:100%;height:auto;margin:0;overflow:visible;
+}
+/* Neutralize the raster's near-white paper before multiply compositing,
+   so the hero background and waves continue seamlessly through the image. */
+html body.hero-experiment .portfolio-hero .hero-runner image{
+  filter:brightness(1.04);
 }
 @media(min-width:901px) and (max-width:1150px){
   html body.hero-experiment .portfolio-hero .hero-layout{min-height:600px}
