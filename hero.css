@@ -1,10 +1,11 @@
 /* Approved editorial hero shared by the homepages and review routes. */
 /* Signal curves cross behind the copy and wireframe at the hero midpoint. */
+html body.hero-experiment .portfolio-hero .hero-copy p{background:#fafaf8}
 html body.hero-experiment > section.portfolio-hero{
   position:relative;isolation:isolate;
 }
 html body.hero-experiment > section.portfolio-hero::after{
-  content:"";position:absolute;inset:50% 0 auto;height:300px;
+  content:"";position:absolute;inset:calc(50% - 70px) 0 auto;height:300px;
   transform:translateY(-50%);z-index:-1;
   background:url('/portfolio/assets/hero-signal-waves.svg') center / 100% 100% no-repeat;
   pointer-events:none;opacity:.45;
@@ -141,3 +142,4 @@ html body.hero-experiment .portfolio-hero .hero-layout{min-height:0}
  .hero-experiment header nav a[aria-current="location"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
  .hero-experiment .reading-progress{background:Highlight;forced-color-adjust:none}
 }
+
