@@ -18,7 +18,7 @@ for(const lang of ['en','es']){
     // Replace both the previous raster and its manually drawn pose overlay.
     svg=svg.replace(/<image[\s\S]*<\/svg>/,'</svg>');
     const frames=sportFrames.map(({file,viewBox},i)=>`<g class="hero-sport-slide${i===0?' is-active':''}" aria-hidden="true"><svg x="120" y="90" width="1080" height="1080" viewBox="${viewBox}" preserveAspectRatio="xMidYMid meet"><image href="/assets/${file}" width="1536" height="1024"/></svg></g>`).join('');
-    return svg.replace('</svg>',`${frames}</svg><button class="hero-sport-toggle" type="button" hidden aria-pressed="false" data-pause="${lang==='es'?'Pausar secuencia':'Pause sequence'}" data-resume="${lang==='es'?'Reanudar secuencia':'Resume sequence'}">${lang==='es'?'Pausar secuencia':'Pause sequence'}</button>`);
+    return svg.replace('</svg>',`${frames}</svg>`);
   });
   html=html.replace(/(<section id="projects"[\s\S]*?<\/h2>)/,`$1<svg class="ecg" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="ecg-track" d="M0,60 H140 q10,-14 20,0 h30 l6,-4 10,-40 10,60 8,-22 6,6 h40 q12,16 24,0 H600"/><path class="ecg-pulse" pathLength="100" d="M0,60 H140 q10,-14 20,0 h30 l6,-4 10,-40 10,60 8,-22 6,6 h40 q12,16 24,0 H600"/></svg>`);
   html=html.replace('/assets/hero-runner-cobalt.png" type="image/png"','/assets/mesh-run.jpg" type="image/jpeg"');
@@ -33,7 +33,7 @@ for(const lang of ['en','es']){
             <image href="/assets/mesh-celebrate.png" width="1536" height="1024" filter="url(#contact-mesh-blue)"/>
           </svg>
         </figure>$2`);
-  html=html.replace('</head>','<link rel="stylesheet" href="/visual-pack.css?v=8"><script src="/visual-pack.js?v=4" defer></script></head>');
+  html=html.replace('</head>','<link rel="stylesheet" href="/visual-pack.css?v=9"><script src="/visual-pack.js?v=5" defer></script></head>');
   await writeFile(`dist/${lang}/index.html`,html);
 }
 console.log('Built decorative movement figures, signal and progressive heading reveals.');

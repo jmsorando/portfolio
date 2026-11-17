@@ -8,8 +8,7 @@
   const frameHero=()=>heroSvg?.setAttribute('viewBox',mobile.matches?'0 0 1320 1320':'0 0 1440 1320');
   frameHero();mobile.addEventListener('change',frameHero);
   const slides=[...document.querySelectorAll('.hero-sport-slide')];
-  const toggle=document.querySelector('.hero-sport-toggle');
-  let slideIndex=0,timer=null,transitionTimer=null,heroVisible=false,paused=false,ready=false;
+  let slideIndex=0,timer=null,transitionTimer=null,heroVisible=false,ready=false;
   const setSlide=index=>{slideIndex=index;slides.forEach((slide,i)=>{
     slide.style.visibility=i===index?'visible':'hidden';
     slide.classList.toggle('is-active',i===index);
@@ -25,14 +24,11 @@
   function syncSequence(){
     clearInterval(timer);timer=null;
     clearTimeout(transitionTimer);transitionTimer=null;
-    if(!toggle)return;
-    toggle.hidden=reduced.matches||!ready;
     if(reduced.matches){setSlide(0);return;}
     setSlide(slideIndex);
-    if(ready&&heroVisible&&!paused&&!document.hidden)timer=setInterval(nextSlide,7000);
+    if(ready&&heroVisible&&!document.hidden)timer=setInterval(nextSlide,7000);
   }
-  if(hero&&toggle&&slides.length>1){
-    toggle.addEventListener('click',()=>{paused=!paused;toggle.setAttribute('aria-pressed',String(paused));toggle.textContent=paused?toggle.dataset.resume:toggle.dataset.pause;syncSequence();});
+  if(hero&&slides.length>1){
     new IntersectionObserver(entries=>{heroVisible=entries[0].isIntersecting;syncSequence();},{threshold:.15}).observe(hero);
     document.addEventListener('visibilitychange',syncSequence);
     reduced.addEventListener('change',syncSequence);
