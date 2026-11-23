@@ -1,15 +1,15 @@
 import {readFile,writeFile,copyFile} from 'node:fs/promises';
-const files=['mesh-cycle.png','mesh-run.jpg','mesh-box.jpg','mesh-football.png','mesh-celebrate.png'];
+const files=['mesh-cycle.webp','mesh-run.jpg','mesh-box.jpg','mesh-football.webp','mesh-celebrate.webp'];
 // Frame visible artwork rather than the original landscape canvas margins.
 // All sports fit the runner's ~1080px visual envelope, centred at (660,630).
 // Extra breathing room preserves hands, wheels, feet and the football.
 const sportFrames=[
   {file:'mesh-run.jpg',viewBox:'310 40 920 910'},
-  {file:'mesh-cycle.png',viewBox:'155 35 1200 925'},
+  {file:'mesh-cycle.webp',viewBox:'155 35 1200 925'},
   {file:'mesh-box.jpg',viewBox:'285 20 1000 940'},
-  {file:'mesh-football.png',viewBox:'95 75 1350 875'}
+  {file:'mesh-football.webp',viewBox:'95 75 1350 875'}
 ];
-for(const name of files)await copyFile(`source/assets/${name}`,`dist/assets/${name}`);
+for(const name of files)await copyFile(`source/assets/${name.endsWith('.webp')?'optimized/':''}${name}`,`dist/assets/${name}`);
 for(const name of ['visual-pack.css','visual-pack.js'])await copyFile(`source/${name}`,`dist/${name}`);
 for(const lang of ['en','es']){
   let html=await readFile(`dist/${lang}/index.html`,'utf8');
@@ -30,7 +30,7 @@ for(const lang of ['en','es']){
             <defs><filter id="contact-mesh-blue" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
               <feColorMatrix type="matrix" values="0 0 0 0 0.576 0 0 0 0 0.773 0 0 0 0 0.992 -0.625 -2.125 -0.25 0 2.875"/>
             </filter></defs>
-            <image href="/assets/mesh-celebrate.png" width="1536" height="1024" filter="url(#contact-mesh-blue)"/>
+            <image href="/assets/mesh-celebrate.webp" width="1536" height="1024" filter="url(#contact-mesh-blue)"/>
           </svg>
         </figure>$2`);
   html=html.replace('</head>','<link rel="stylesheet" href="/visual-pack.css?v=9"><script src="/visual-pack.js?v=6" defer></script></head>');

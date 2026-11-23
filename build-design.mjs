@@ -22,7 +22,7 @@ for (const lang of ['en', 'es']) {
   const copy = labels[lang];
   let html = await readFile(`dist/${lang}/index.html`, 'utf8');
   html = requiredReplace(html, 'class="hero-experiment ', 'class="portfolio-design hero-experiment ', 'body class');
-  html = html.replace('</head>', '<link rel="stylesheet" href="/design.css?v=2"><script src="/design.js?v=1" defer></script></head>');
+  html = html.replace('</head>', '<link rel="stylesheet" href="/design.css?v=3"><script src="/design.js?v=1" defer></script></head>');
   html = requiredReplace(html, /(<section id="projects"[\s\S]*?)<span class="text-xs font-mono text-cobalt font-bold tracking-widest uppercase">[^<]*<\/span>/,
     (_, start) => start + sectionLabel('01', copy.projects), 'projects label');
 

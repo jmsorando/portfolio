@@ -9,7 +9,7 @@ for(const lang of ['en','es']) {
   assert(main.includes('href="/transitions.css?v=1"'));
   assert.equal((main.match(/data-section-transition=/g)||[]).length,4,'Each approved transition target appears once');
   assert(main.includes('href="/academic.css?v=1"'));
-  assert(main.includes('href="/design.css?v=2"')&&main.includes('src="/design.js?v=1"'));
+  assert(main.includes('href="/design.css?v=3"')&&main.includes('src="/design.js?v=1"'));
   assert(!main.includes('/preview/')&&!main.includes('noindex'),'Main pages use production assets and metadata');
   assert(main.includes(`rel="canonical" href="https://jmsorando.github.io/portfolio/${lang}/"`));
   const careerDesign=section(main,'experience');
