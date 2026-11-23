@@ -1,7 +1,31 @@
 (() => {
-  // Keep semantic headings intact and readable if JS or observers are unavailable.
-  if(!('IntersectionObserver' in window))return;
+  // Keep content and the motion control usable without observer support.
+  const Observer=window.IntersectionObserver||class {
+    constructor(callback){this.callback=callback;}
+    observe(target){this.callback([{target,isIntersecting:true}]);}
+    unobserve(){}
+    disconnect(){}
+  };
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  const motionButton=document.querySelector('.motion-toggle');
+  const spanish=document.documentElement.lang==='es';
+  let paused=false;
+  try{paused=sessionStorage.getItem('portfolio-motion-paused')==='true';}catch{}
+  const syncMotion=()=>{
+    document.body.classList.toggle('motion-paused',paused||reduced.matches);
+    if(motionButton){
+      motionButton.hidden=false;
+      motionButton.disabled=reduced.matches;
+      motionButton.textContent=reduced.matches?(spanish?'Movimiento reducido del sistema':'System reduced motion'):
+        paused?(spanish?'Reanudar animaciones':'Resume animations'):(spanish?'Pausar animaciones':'Pause animations');
+    }
+    syncSequence();
+  };
+  motionButton?.addEventListener('click',()=>{
+    paused=!paused;
+    try{sessionStorage.setItem('portfolio-motion-paused',String(paused));}catch{}
+    syncMotion();
+  });
   const hero=document.querySelector('.hero-illustration');
   const heroSvg=hero?.querySelector('.hero-runner');
   const mobile=matchMedia('(max-width:900px)');
@@ -39,16 +63,16 @@
     clearTimeout(transitionTimer);transitionTimer=null;
     if(reduced.matches){setSlide(0);return;}
     setSlide(slideIndex);
-    if(ready&&heroVisible&&!document.hidden)timer=setInterval(nextSlide,7000);
+    if(ready&&heroVisible&&!document.hidden&&!paused)timer=setInterval(nextSlide,7000);
   }
   if(hero&&slides.length>1){
-    new IntersectionObserver(entries=>{heroVisible=entries[0].isIntersecting;syncSequence();},{threshold:.15}).observe(hero);
+    new Observer(entries=>{heroVisible=entries[0].isIntersecting;syncSequence();},{threshold:.15}).observe(hero);
     document.addEventListener('visibilitychange',syncSequence);
-    reduced.addEventListener('change',syncSequence);
+    reduced.addEventListener('change',syncMotion);
     Promise.all(slides.slice(1).map(slide=>{const image=new Image();image.src=slide.querySelector('image').getAttribute('href');return image.decode();})).then(()=>{ready=true;syncSequence();}).catch(()=>{ready=false;syncSequence();});
   }
   const headings=[...document.querySelectorAll('#projects h2,#experience h2,#contact h2')];
-  const reveal=new IntersectionObserver(entries=>entries.forEach(({target,isIntersecting})=>{
+  const reveal=new Observer(entries=>entries.forEach(({target,isIntersecting})=>{
     if(isIntersecting){target.classList.add('in');reveal.unobserve(target);}
   }),{threshold:.4});
   if(!reduced.matches)headings.forEach(h=>{
@@ -68,7 +92,8 @@
     h.classList.add('kinetic','kinetic-ready');reveal.observe(h);
   });
   const signals=[...document.querySelectorAll('.ecg')];
-  const signalObserver=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('is-visible',e.isIntersecting)),{threshold:.1});
+  const signalObserver=new Observer(entries=>entries.forEach(e=>e.target.classList.toggle('is-visible',e.isIntersecting)),{threshold:.1});
   signals.forEach(el=>signalObserver.observe(el));
   reduced.addEventListener('change',()=>{if(reduced.matches){headings.forEach(h=>h.classList.add('in'));reveal.disconnect();}});
+  syncMotion();
 })();
