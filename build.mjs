@@ -6,3 +6,4 @@ await import('./build-transitions.mjs');
 await import('./build-projects-preview.mjs');
 await import('./build-image-delivery.mjs');
 await import('./build-visual-pack.mjs');
+await import('./build-tailwind.mjs');

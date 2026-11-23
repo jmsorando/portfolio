@@ -40,4 +40,11 @@ html body.portfolio-design #experience{position:relative;isolation:isolate}
 @media(prefers-reduced-motion:reduce){.ecg .ecg-pulse{animation:none;stroke-dasharray:none}}
 @media(max-width:600px){.movement-strip{gap:12px;margin-inline:16px;padding-inline:0}.mesh-figure figcaption{font-size:9px}}
 @media(forced-colors:active){#experience::before,.ecg{display:none}.mesh-figure figcaption{color:CanvasText}}
+.motion-toggle{pointer-events:auto;display:block;margin-top:14px;min-height:44px;padding:6px 0;color:#526174;font:400 12px/1.5 'JetBrains Mono',monospace;text-align:left;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.motion-toggle[hidden]{display:none}
+.motion-toggle:focus-visible{outline:2px solid #2563eb;outline-offset:5px;border-radius:2px}
+.motion-toggle:disabled{cursor:default;text-decoration:none}
+body.motion-paused .portfolio-hero::after,body.motion-paused .portfolio-hero::before,body.motion-paused .ai-heading,body.motion-paused .ecg-pulse{animation-play-state:paused!important}
+body.motion-paused .hero-sport-slide{transition:none}
+body.motion-paused .kinetic.kinetic-ready .w{opacity:1;transform:none;transition:none}
 

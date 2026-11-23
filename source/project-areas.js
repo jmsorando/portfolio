@@ -2,6 +2,7 @@ import {MATERIALS, nextZoom, imageDimensions} from '/projects/model.mjs?v=9';
 import {AREAS, PROJECT_LABELS, areaProjects, parentView} from './areas-model.mjs?v=11';
 import {responsiveMarkup, AREA_SIZES, DETAIL_SIZES, selectionSizes, documentSource,documentDimensions} from '/projects/image-delivery.mjs?v=5';
 import {createImageWarmer,loadDocumentImage} from '/projects/popup-image-loading.mjs?v=1';
+import {TRANSCRIPTS} from './transcripts.mjs?v=1';
 
 const lang = document.documentElement.lang === 'es' ? 'es' : 'en';
 const copy = {
@@ -121,6 +122,12 @@ function openMaterial(record, button) {
   const pages=record.pages||[record.file];let pageIndex=0;
   const pageControls=pages.length>1?`<div class="pp-toolbar"><button class="pp-control" type="button" data-page="previous" aria-label="${pageCopy.previous}" disabled>←</button><output class="pp-zoom pp-page-count" aria-label="${pageCopy.page}" aria-live="polite">1 / ${pages.length}</output><button class="pp-control" type="button" data-page="next" aria-label="${pageCopy.next}">→</button></div>`:'';
   content.innerHTML=`<h2 id="pp-title">${escape(record.title[lang])}</h2><div class="pp-toolbar">${imageControls}<a class="pp-original" href="${record.originalFile||record.file}" target="_blank" rel="noopener noreferrer">${copy.original} ↗</a></div>${pageControls}<p class="pp-status" role="status">${copy.loading}</p><div class="pp-stage" role="region" tabindex="0" aria-label="${copy.viewer}"></div>`;
+  const transcript=TRANSCRIPTS[record.id];
+  if(transcript){
+    const details=document.createElement('details');details.className='pp-transcript';
+    details.innerHTML=`<summary>${lang==='es'?'Leer contenido':'Read content'}</summary><p class="pp-transcript-note">${lang==='es'?'Texto en el idioma original. Las descripciones de gráficos están identificadas como tales.':'Text in the original language. Chart descriptions are labelled separately.'}</p><article lang="en" aria-label="${escape(record.title.en)}">${transcript}</article>`;
+    content.querySelector('.pp-status').before(details);
+  }
   dialog.scrollTop=0;backButton.focus({preventScroll:true});stage=content.querySelector('.pp-stage');
   const status=content.querySelector('.pp-status');
   let imageFailed=false;
@@ -182,7 +189,7 @@ function goBack() {
 backButton.addEventListener('click',goBack);
 dialog.addEventListener('keydown',event=>{
   if(event.key!=='Tab')return;
-  const stops=[...dialog.querySelectorAll('button:not(:disabled),a[href],object,[tabindex]')].filter(el=>el.tabIndex>=0&&el.getClientRects().length>0);
+  const stops=[...dialog.querySelectorAll('button:not(:disabled),a[href],summary,object,[tabindex]')].filter(el=>el.tabIndex>=0&&el.getClientRects().length>0);
   const first=stops[0],last=stops.at(-1);
   if(!first){event.preventDefault();closeButton.focus();return;}
   if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}

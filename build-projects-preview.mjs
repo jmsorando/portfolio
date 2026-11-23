@@ -5,7 +5,7 @@ import {AREAS,LAB_VISUALS} from './source/project-areas-model.mjs';
 
 for (const lang of ['en', 'es']) {
   let html = await readFile(`dist/${lang}/index.html`, 'utf8');
-  html = html.replace('</head>', '<link rel="stylesheet" href="/projects/dialog.css?v=2"><link rel="stylesheet" href="/projects/areas.css?v=4"><link rel="modulepreload" href="/projects/areas-model.mjs?v=11"><link rel="modulepreload" href="/projects/model.mjs?v=9"><link rel="modulepreload" href="/projects/image-delivery.mjs?v=5"><link rel="modulepreload" href="/projects/image-manifest.mjs?v=5"><link rel="modulepreload" href="/projects/popup-image-loading.mjs?v=1"><script type="module" src="/projects/areas.js?v=14"></script></head>');
+  html = html.replace('</head>', '<link rel="stylesheet" href="/projects/dialog.css?v=3"><link rel="stylesheet" href="/projects/areas.css?v=4"><link rel="modulepreload" href="/projects/areas-model.mjs?v=11"><link rel="modulepreload" href="/projects/model.mjs?v=9"><link rel="modulepreload" href="/projects/image-delivery.mjs?v=5"><link rel="modulepreload" href="/projects/image-manifest.mjs?v=5"><link rel="modulepreload" href="/projects/popup-image-loading.mjs?v=1"><script type="module" src="/projects/areas.js?v=15"></script></head>');
   if(!html.includes('window.onload = function() { renderProjects(); };')) throw new Error('Project renderer entry point changed');
   html = html.replace('window.onload = function() { renderProjects(); };', '// The shared areas module renders projects.');
   await writeFile(`dist/${lang}/index.html`, html);
@@ -40,3 +40,7 @@ for (const record of Object.values(MATERIALS).flat()) {
 console.log('Built three areas and the visual project chooser on both homepages.');
 
 
+
+const transcripts={};
+for(const record of Object.values(MATERIALS).flat())transcripts[record.id]=await readFile(`source/transcripts/${record.id}.html`,'utf8');
+await writeFile('dist/projects/transcripts.mjs',`export const TRANSCRIPTS = ${JSON.stringify(transcripts)};\n`);

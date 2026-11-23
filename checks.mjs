@@ -4,3 +4,4 @@ await import('./project-preview-checks.mjs');
 await import('./image-delivery-checks.mjs');
 await import('./popup-image-loading-checks.mjs');
 await import('./design-preview-checks.mjs');
+await import('./accessibility-delivery-checks.mjs');
