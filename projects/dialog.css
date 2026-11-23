@@ -1,7 +1,6 @@
 /* Approved expanded project dialogs, shared by the portfolio and its review routes. */
-/* Hide the scrollbar chrome while retaining native scrolling and keyboard access. */
-:is(.project-preview-dialog,.pp-stage){scrollbar-width:none;-ms-overflow-style:none}
-:is(.project-preview-dialog,.pp-stage)::-webkit-scrollbar{display:none;width:0;height:0}
+/* Keep native scrollbars visible when content overflows, including zoomed documents. */
+:is(.project-preview-dialog,.pp-stage){scrollbar-width:auto;scrollbar-gutter:stable}
 .project-preview-dialog{box-sizing:border-box;width:min(1280px,calc(100% - 64px));max-width:none;max-height:90dvh;margin:auto;padding:0;border:1px solid #34445a;border-radius:10px;background:#111f33;color:#d4deeb;overflow:auto;overscroll-behavior:contain;color-scheme:dark}
 .project-preview-dialog *{box-sizing:border-box}
 .project-preview-dialog::backdrop{background:rgb(10 18 31 / .65)}

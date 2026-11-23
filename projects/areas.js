@@ -140,6 +140,7 @@ function openMaterial(record, button) {
   function showPage(index) {
     cancelDocumentLoad?.();documentFullReady=false;imageFailed=false;
     pageIndex=Math.max(0,Math.min(pages.length-1,index));zoom=100;
+    content.querySelector('.pp-original').href=record.originalFile||pages[pageIndex];
     documentNaturalSize=documentDimensions(pages[pageIndex]);
     status.textContent=copy.loading;stage.hidden=false;img.hidden=true;img.onload=null;
     stage.setAttribute('aria-busy','true');
