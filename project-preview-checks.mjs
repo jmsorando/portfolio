@@ -42,7 +42,7 @@ for(const lang of ['en','es']) {
   assert(!main.includes('window.onload = function() { renderProjects(); };'),'Do not initialize the superseded six-card renderer');
   assert(main.includes('href="/projects/areas.css?v=6"'));
   for(const locale of ['en','es'])assert(main.includes(`href="/${locale}/"`),'Main language links stay on the main portfolio');
-  assert(main.includes('href="/projects/dialog.css?v=4"'));
+  assert(main.includes('href="/projects/dialog.css?v=5"'));
   assert(!main.includes('noindex'),'Keep original main-page metadata');
   const app=[...main.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(m=>m[1]).find(s=>s.includes('const PROJECTS'));
   const original=JSON.parse(vm.runInNewContext(app+';JSON.stringify(PROJECTS);',{window:{}}));
