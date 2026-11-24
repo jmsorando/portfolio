@@ -50,4 +50,4 @@ motion.click();assert.equal(motion.intervals.size,1);
 const reducedMotion=await motionHarness({reduced:true});assert.equal(reducedMotion.intervals.size,0);assert(reducedMotion.button.disabled);
 const restored=await motionHarness({stored:true});assert.equal(restored.intervals.size,0);
 const fallback=await motionHarness({blockedStorage:true,observer:false});fallback.click();assert.equal(fallback.intervals.size,0);assert(!fallback.button.hidden);
-console.log('PASS: all eight semantic transcripts, local Tailwind utilities, pause/resume timers, persisted pause, reduced-motion priority and browser fallbacks.');
+console.log('PASS: all seven semantic transcripts, local Tailwind utilities, pause/resume timers, persisted pause, reduced-motion priority and browser fallbacks.');

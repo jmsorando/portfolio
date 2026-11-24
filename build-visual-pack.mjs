@@ -34,7 +34,7 @@ for(const lang of ['en','es']){
           </svg>
         </figure>$2`);
   html=html.replace(/(<a class="explore-work"[\s\S]*?<\/a>)/, '$1<button type="button" class="motion-toggle" hidden></button>');
-  html=html.replace('</head>','<link rel="stylesheet" href="/visual-pack.css?v=10"><script src="/visual-pack.js?v=7" defer></script></head>');
+  html=html.replace('</head>','<link rel="stylesheet" href="/visual-pack.css?v=12"><script src="/visual-pack.js?v=7" defer></script></head>');
   await writeFile(`dist/${lang}/index.html`,html);
 }
 console.log('Built decorative movement figures, signal and progressive heading reveals.');

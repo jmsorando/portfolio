@@ -1,8 +1,8 @@
-import {MATERIALS, nextZoom, imageDimensions} from '/projects/model.mjs?v=9';
+import {MATERIALS, nextZoom, imageDimensions} from '/projects/model.mjs?v=10';
 import {AREAS, PROJECT_LABELS, areaProjects, parentView} from './areas-model.mjs?v=11';
 import {responsiveMarkup, AREA_SIZES, DETAIL_SIZES, selectionSizes, documentSource,documentDimensions} from '/projects/image-delivery.mjs?v=5';
 import {createImageWarmer,loadDocumentImage} from '/projects/popup-image-loading.mjs?v=1';
-import {TRANSCRIPTS} from './transcripts.mjs?v=1';
+import {TRANSCRIPTS} from './transcripts.mjs?v=2';
 
 const lang = document.documentElement.lang === 'es' ? 'es' : 'en';
 const copy = {
@@ -121,7 +121,7 @@ function openMaterial(record, button) {
   const imageControls=record.type==='image'?`<button class="pp-control" type="button" data-zoom="fit">${copy.fit}</button><button class="pp-control" type="button" data-zoom="out" aria-label="${copy.zoomOut}" disabled>−</button><output class="pp-zoom" aria-label="${copy.zoom}" aria-live="polite">100%</output><button class="pp-control" type="button" data-zoom="in" aria-label="${copy.zoomIn}">+</button>`:'';
   const pages=record.pages||[record.file];let pageIndex=0;
   const pageControls=pages.length>1?`<div class="pp-toolbar"><button class="pp-control" type="button" data-page="previous" aria-label="${pageCopy.previous}" disabled>←</button><output class="pp-zoom pp-page-count" aria-label="${pageCopy.page}" aria-live="polite">1 / ${pages.length}</output><button class="pp-control" type="button" data-page="next" aria-label="${pageCopy.next}">→</button></div>`:'';
-  content.innerHTML=`<h2 id="pp-title">${escape(record.title[lang])}</h2><div class="pp-toolbar">${imageControls}<a class="pp-original" href="${record.originalFile||record.file}" target="_blank" rel="noopener noreferrer">${copy.original} ↗</a></div>${pageControls}<p class="pp-status" role="status">${copy.loading}</p><div class="pp-stage" role="region" tabindex="0" aria-label="${copy.viewer}"></div>`;
+  content.innerHTML=`<h2 id="pp-title">${escape(record.title[lang])}</h2><div class="pp-toolbar">${imageControls?`<div class="pp-zoom-controls">${imageControls}</div>`:''}<a class="pp-original" href="${record.originalFile||record.file}" target="_blank" rel="noopener noreferrer">${copy.original} ↗</a></div>${pageControls}<p class="pp-status" role="status">${copy.loading}</p><div class="pp-stage" role="region" tabindex="0" aria-label="${copy.viewer}"></div>`;
   const transcript=TRANSCRIPTS[record.id];
   if(transcript){
     const details=document.createElement('details');details.className='pp-transcript';

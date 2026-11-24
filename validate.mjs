@@ -6,7 +6,7 @@ for(const lang of ['en','es']){
  const html=await readFile(`dist/${lang}/index.html`,'utf8');
  assert(html.includes(`<html lang="${lang}"`));
  assert.equal((html.match(/<h1\b/g)||[]).length,1);
- assert(html.includes('/hero-scroll.js?v=3') && html.includes('/hero.css?v=25'));
+ assert(html.includes('/hero-scroll.js?v=3') && html.includes('/hero.css?v=26'));
  assert(html.includes('reading-progress') && html.includes('explore-work'));
  assert(html.includes('/assets/mesh-run.jpg'));
  assert(!html.includes('id="about"') && !html.includes('href="#about"') && !html.includes('href="/about.css"'),'Main pages must omit About and its stylesheet');

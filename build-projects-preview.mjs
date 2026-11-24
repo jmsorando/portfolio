@@ -5,7 +5,7 @@ import {AREAS,LAB_VISUALS} from './source/project-areas-model.mjs';
 
 for (const lang of ['en', 'es']) {
   let html = await readFile(`dist/${lang}/index.html`, 'utf8');
-  html = html.replace('</head>', '<link rel="stylesheet" href="/projects/dialog.css?v=3"><link rel="stylesheet" href="/projects/areas.css?v=4"><link rel="modulepreload" href="/projects/areas-model.mjs?v=11"><link rel="modulepreload" href="/projects/model.mjs?v=9"><link rel="modulepreload" href="/projects/image-delivery.mjs?v=5"><link rel="modulepreload" href="/projects/image-manifest.mjs?v=5"><link rel="modulepreload" href="/projects/popup-image-loading.mjs?v=1"><script type="module" src="/projects/areas.js?v=15"></script></head>');
+  html = html.replace('</head>', '<link rel="stylesheet" href="/projects/dialog.css?v=4"><link rel="stylesheet" href="/projects/areas.css?v=6"><link rel="modulepreload" href="/projects/areas-model.mjs?v=11"><link rel="modulepreload" href="/projects/model.mjs?v=10"><link rel="modulepreload" href="/projects/image-delivery.mjs?v=5"><link rel="modulepreload" href="/projects/image-manifest.mjs?v=5"><link rel="modulepreload" href="/projects/popup-image-loading.mjs?v=1"><script type="module" src="/projects/areas.js?v=17"></script></head>');
   if(!html.includes('window.onload = function() { renderProjects(); };')) throw new Error('Project renderer entry point changed');
   html = html.replace('window.onload = function() { renderProjects(); };', '// The shared areas module renders projects.');
   await writeFile(`dist/${lang}/index.html`, html);
@@ -14,7 +14,7 @@ await copyFile('source/tech-palette.css','dist/tech-palette.css');
 for(const lang of ['en','es']){
   const file=`dist/${lang}/index.html`;
   const html=await readFile(file,'utf8');
-  await writeFile(file,html.replace('</head>','<link rel="stylesheet" href="/tech-palette.css?v=7"></head>'));
+  await writeFile(file,html.replace('</head>','<link rel="stylesheet" href="/tech-palette.css?v=10"></head>'));
 }
 await mkdir('dist/projects', {recursive:true});
 for (const [source, output] of [['project-preview.css','dialog.css'], ['project-preview-model.mjs','model.mjs']]) {

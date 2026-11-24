@@ -21,14 +21,14 @@ html body.portfolio-design .portfolio-hero .ai-heading{
   background-image:linear-gradient(100deg,#086e8e 0%,#1d4ed8 35%,#6941c6 65%,#1d4ed8 85%,#086e8e 100%);
 }
 html body.portfolio-design .explore-work{
-  padding:12px 20px;border-radius:8px;background:#1d4ed8;color:#fff;
-  box-shadow:0 5px 16px #2563eb24;text-decoration:none;
+  padding:12px 20px;border-radius:6px;background:#1d4ed8;color:#fff;
+  box-shadow:0 2px 8px #2563eb20;text-decoration:none;
   transition:background-color 180ms ease,box-shadow 180ms ease;
 }
-html body.portfolio-design .explore-work:hover{background:#1e40af;box-shadow:0 7px 22px #2563eb35}
+html body.portfolio-design .explore-work:hover{background:#1e40af;box-shadow:0 3px 10px #2563eb28}
 html body.portfolio-design .portfolio-hero .explore-work{
-  background:linear-gradient(115deg,#1d4ed8,#2545b8);border:1px solid #2756ce;
-  box-shadow:0 7px 20px #1d4ed825,inset 0 1px 0 #ffffff25;
+  background:#1d4ed8;border:1px solid #2756ce;
+  box-shadow:0 2px 8px #1d4ed820;
 }
 html body.portfolio-design .portfolio-hero .explore-work:hover{background:#1e40af}
 html body.portfolio-design #projects{
@@ -41,15 +41,15 @@ html body.portfolio-design #projects{
 .portfolio-design #projects>div>div.border-b{border-color:#30415c}
 .portfolio-design #projectsGrid [data-area]{--area-accent:var(--tech-blue)}
 html body.portfolio-design #projectsGrid .project-card{
-  background:var(--tech-panel);border-color:#35445e!important;
-  border-top:3px solid var(--area-accent)!important;
-  box-shadow:0 12px 32px #03091730;
+  background:var(--tech-panel);border-color:#35445e!important;border-radius:10px;
+  border-top:1px solid #35445e!important;
+  box-shadow:0 3px 10px #03091720;
 }
 .portfolio-design #projectsGrid .project-card>.p-5{border-top:1px solid #30415c;background:#122139}
 html body.portfolio-design #projectsGrid .project-open{color:var(--area-accent)}
 html body.portfolio-design #projectsGrid .area-contents{color:#c1cde0}
 html body.portfolio-design #projectsGrid .project-card:hover{
-  border-color:var(--area-accent)!important;box-shadow:0 14px 36px #03091760;
+  border-color:var(--area-accent)!important;box-shadow:0 6px 16px #03091730;
 }
 html body.portfolio-design #projectsGrid .project-card:focus-within{outline-color:var(--area-accent)}
 html body.portfolio-design #experience{
@@ -65,12 +65,12 @@ html body.portfolio-design #experience{
 .portfolio-design #experience .career-entry{
   padding:22px 24px;margin-bottom:18px;background:#fff;
   border:1px solid #cfdeef;border-radius:10px;
-  box-shadow:0 5px 20px #12345405;
+  box-shadow:none;
 }
 .portfolio-design #experience .career-entry:last-child{padding-bottom:22px;margin-bottom:0}
 .portfolio-design #experience .career-entry::before{
   top:28px;background:#6fa8e6;border-color:#6fa8e6;
-  box-shadow:0 0 0 5px #e7effb;
+  box-shadow:0 0 0 3px #e7effb;
 }
 .portfolio-design #experience .career-entry-header>span{color:#4b607c}
 .portfolio-design #experience .career-entry-header>div>span{color:#1e4da6}
@@ -79,10 +79,10 @@ html body.portfolio-design #experience{
 .portfolio-design #experience .career-entry li::marker{color:#1e4da6}
 .portfolio-design #experience .academic-card{
   background:#fff;border-color:#cfdeef;
-  border-top:2px solid #6fa8e6;box-shadow:0 5px 20px #12345405;
+  border-top:1px solid #cfdeef;box-shadow:none;
 }
 .portfolio-design #experience .academic-degree{
-  border-top:3px solid #6fa8e6;
+  border-top:1px solid #cfdeef;
   background:#fff;
 }
 .portfolio-design #experience .academic-card h3{color:#182b4a}

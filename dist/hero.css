@@ -43,8 +43,8 @@ html body.hero-experiment .portfolio-hero .hero-copy{
   padding-block:60px;align-self:start;pointer-events:none;
 }
 html body.hero-experiment .portfolio-hero h1{
-  font-size:clamp(60px,5.28vw,76px)!important;line-height:1.04!important;
-  letter-spacing:-.055em!important;white-space:normal;max-width:none;
+  font-size:clamp(60px,5.28vw,76px)!important;line-height:1.08!important;
+  letter-spacing:-.035em!important;white-space:normal;max-width:none;
   margin:0;color:#172033;
 }
 .hero-experiment .hero-title-line{display:block;width:max-content;max-width:100%}
@@ -76,8 +76,8 @@ html body.hero-experiment .portfolio-hero .hero-runner image{
   body.hero-experiment > section.portfolio-hero{padding-block:36px 32px!important}
   html body.hero-experiment .portfolio-hero .hero-layout{display:flex;flex-direction:column;min-height:0;gap:16px}
   html body.hero-experiment .portfolio-hero .hero-copy{width:100%;padding:0}
-  html body.hero-experiment .portfolio-hero h1{font-size:clamp(36px,5.73vw,44px)!important;line-height:1.12!important;letter-spacing:-.045em!important}
-  .hero-experiment .hero-title-line{width:auto}
+  html body.hero-experiment .portfolio-hero h1{font-size:clamp(34px,5.73vw,44px)!important;line-height:1.12!important;letter-spacing:-.03em!important}
+  .hero-experiment .hero-title-line{width:auto;text-wrap:balance}
   html body.hero-experiment > section.portfolio-hero .hero-copy p{font-size:18px;line-height:1.7;width:100%;max-width:55ch;margin-top:24px!important}
   html body.hero-experiment .portfolio-hero .hero-illustration{width:100%;max-width:600px;margin:0;align-self:center}
 }
@@ -92,7 +92,7 @@ html body.hero-experiment .portfolio-hero .hero-runner image{
 @media(min-width:1151px){html body.hero-experiment .portfolio-hero .hero-illustration{transform:translate(20px,-52px)}}
 
 @media(min-width:901px){
- html[lang="es"] body.hero-experiment .portfolio-hero h1{font-size:clamp(52px,4.45vw,64px)!important}
+ html[lang="es"] body.hero-experiment .portfolio-hero h1{font-size:clamp(52px,4.3vw,62px)!important}
 }
 
 
