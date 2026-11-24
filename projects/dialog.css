@@ -5,9 +5,9 @@
 .project-preview-dialog *{box-sizing:border-box}
 .project-preview-dialog::backdrop{background:rgb(10 18 31 / .65)}
 .pp-bar{position:sticky;top:0;z-index:3;display:flex;justify-content:flex-end;align-items:center;gap:12px;padding:12px 24px;background:#111f33;border-bottom:1px solid #34445a}
-.pp-close,.pp-control,.pp-back,.pp-original{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;border:1px solid #4a607c;border-radius:5px;padding:9px 14px;background:transparent;color:#e8eef7;font:600 13px/24px 'Plus Jakarta Sans',sans-serif;cursor:pointer;text-decoration:none}
-.pp-close{background:#2563eb;border-color:#2563eb;color:white}
-.pp-close:hover{background:#1d4ed8;border-color:#1d4ed8}
+.pp-close,.pp-control,.pp-back,.pp-original{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;border:1px solid #4a607c;border-radius:6px;padding:9px 14px;background:transparent;color:#e8eef7;font:600 13px/24px 'Plus Jakarta Sans',sans-serif;cursor:pointer;text-decoration:none}
+.pp-close{background:transparent;border-color:#4a607c;color:#e8eef7}
+.pp-close:hover{background:#20334d;border-color:#809bbf}
 .pp-close svg{display:block;flex:none;width:18px;height:18px}
 .pp-close span{line-height:24px}
 .pp-back{margin-right:auto;text-align:left}
@@ -45,7 +45,7 @@
 .pp-control{min-width:44px}
 .pp-zoom{font:500 13px/1.5 'JetBrains Mono',monospace;min-width:48px;text-align:center}
 .pp-viewer h2{font-size:24px;margin-bottom:20px}
-.pp-stage{height:min(58dvh,670px);min-height:210px;overflow:auto;border:1px solid #34445a;border-radius:5px;background:#0d192b;overscroll-behavior:contain;position:relative}
+.pp-stage{height:min(58dvh,670px);min-height:210px;overflow:auto;border:1px solid #34445a;border-radius:6px;background:#0d192b;overscroll-behavior:contain;position:relative}
 .pp-canvas{display:grid;place-items:center;min-width:100%;min-height:100%;width:max-content;height:max-content;padding:12px}
 .pp-document{display:block;max-width:none!important;max-height:none;object-fit:contain}
 .pp-stage object{display:block;border:0;width:100%;height:100%;background:#fff;color:#172033}
@@ -91,4 +91,18 @@
  .project-preview-dialog :is(h2,h3,p,small){color:CanvasText}
  .project-preview-dialog :is(button,a){color:LinkText;border-color:ButtonText}
  .project-preview-dialog :focus-visible{outline-color:Highlight}
+}
+
+/* Round 5: keep zoom controls together and give phone documents more room. */
+.pp-zoom-controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
+.pp-transcript{border-radius:10px}
+@media(max-width:767px){
+ .project-preview-dialog{width:calc(100% - 16px)}
+ .pp-content{padding:12px}
+ .pp-bar{padding:10px 12px;gap:8px}
+ .pp-toolbar{align-items:flex-start;gap:12px}
+ .pp-toolbar .pp-original{margin-left:0}
+ .pp-transcript summary{padding:12px}
+ .pp-transcript article{padding:0 12px 20px}
+ .pp-transcript .pp-transcript-note{padding-inline:12px}
 }

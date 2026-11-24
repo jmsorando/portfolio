@@ -10,11 +10,7 @@ export const MATERIALS = {
     {id:'orb-placement-poster', type:'image', file:base+'orb-placement-poster.png', thumbnail:base+'orb-placement-poster-800.webp', thumbnailWidth:800, thumbnailHeight:1131,
       title:{en:'ORB Sport placement poster', es:'Póster de prácticas en ORB Sport'},
       kind:{en:'Research poster', es:'Póster de investigación'},
-      alt:{en:'Poster on the accuracy and agreement of ORB Sport mouthguard heart-rate measurements during laboratory exercise and Muay Thai.', es:'Póster sobre precisión y concordancia de la frecuencia cardíaca medida con el protector bucal ORB Sport durante ejercicio en laboratorio y Muay Thai.'}},
-    {id:'orb-placement-reference', type:'image', file:base+'orb-placement-reference-page-1.png', pages:[base+'orb-placement-reference-page-1.png',base+'orb-placement-reference-page-2.png'], thumbnail:base+'orb-placement-reference-800.webp', thumbnailWidth:800, thumbnailHeight:1131,
-      title:{en:'ORB placement reference', es:'Carta de referencia de las prácticas en ORB'},
-      kind:{en:'Reference letter · 2 pages', es:'Carta de referencia · 2 páginas'},
-      alt:{en:'ORB Innovations placement reference for José Miguel Sorando Campillo.', es:'Carta de referencia de ORB Innovations para José Miguel Sorando Campillo.'}}
+      alt:{en:'Poster on the accuracy and agreement of ORB Sport mouthguard heart-rate measurements during laboratory exercise and Muay Thai.', es:'Póster sobre precisión y concordancia de la frecuencia cardíaca medida con el protector bucal ORB Sport durante ejercicio en laboratorio y Muay Thai.'}}
   ],
   'PRJ-04': [
     {id:'pharmamiku-poster', type:'image', file:base+'pharmamiku-poster.png', thumbnail:base+'pharmamiku-poster-480.webp',
