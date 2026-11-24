@@ -15,7 +15,7 @@
 .project-preview-dialog :is(button,a,[tabindex]):focus-visible{outline:3px solid #a9c9ff;outline-offset:4px}
 .project-preview-dialog button:disabled{opacity:.4;cursor:default}
 .pp-content{padding:32px}
-.pp-layout{display:grid;grid-template-columns:minmax(0,52fr) minmax(0,48fr);gap:40px;align-items:center}
+.pp-layout{display:grid;grid-template-columns:minmax(0,40fr) minmax(0,60fr);gap:40px;align-items:center}
 .pp-visual{width:100%;min-width:0;background:#111f33;container-type:inline-size}
 .pp-visual .project-visual{width:100%;height:auto;min-height:0;aspect-ratio:1.6;background:#111f33}
 .pp-visual .project-visual>img{object-fit:contain!important}
@@ -33,12 +33,12 @@
 .pp-facts h3{font:600 12px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:#9fc1ff;margin:0}
 .pp-facts p{font:400 16px/1.7 'Plus Jakarta Sans',sans-serif;color:#d4deeb;margin:8px 0 0}
 .pp-external{display:inline-flex;align-items:center;min-height:44px;margin-top:20px;color:#a9c9ff;font:600 13px/1.5 'JetBrains Mono',monospace;text-decoration:underline;text-underline-offset:4px}
-.project-preview-dialog .pp-materials{border-top:1px solid #34445a;margin-top:32px;padding:28px 0 0!important}
+.project-preview-dialog .pp-materials{border-top:1px solid #34445a;margin-top:24px;padding:24px 0 0!important}
 .pp-materials h3{color:#fff;font:500 23px/1.3 'Space Grotesk',sans-serif;margin:0 0 20px}
 .pp-material-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .pp-material{display:flex;flex-direction:column;align-items:stretch;align-self:start;text-align:left;gap:8px;border:0;border-radius:0;background:transparent;padding:0;color:#eef3fb;cursor:pointer;font:500 16px/1.5 'Plus Jakarta Sans',sans-serif;min-width:0}
 .pp-material:hover>span{color:#a9c9ff;text-decoration:underline;text-underline-offset:4px}
-.pp-material img{display:block;width:100%;height:auto;object-fit:contain;margin-bottom:6px}
+.pp-material img{display:block;width:100%;height:clamp(280px,24vw,340px);object-fit:contain;object-position:left center;margin-bottom:6px}
 .pp-material small{font:400 12px/1.5 'JetBrains Mono',monospace;color:#a9bbd4}
 .pp-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 16px}
 .pp-toolbar .pp-original{margin-left:auto}
