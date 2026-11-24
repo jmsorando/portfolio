@@ -22,7 +22,7 @@ for(const lang of ['en','es']){
  html=html.replace('<script src="/language.js" defer></script>','<script src="/hero-scroll.js?v=2" defer></script>');
  html=html.replace(/(<div class="hero-copy">[\s\S]*?<\/p>)/, '$1<a class="explore-work" href="#projects">'+(lang==='en'?'Explore my work':'Explorar mis proyectos')+' <span aria-hidden="true">↓</span></a>');
  html=html.replace('</header>','<span class="reading-progress" aria-hidden="true"></span></header>');
- html=html.replace('</head>','<link rel="stylesheet" href="/hero.css?v=26"></head>');
+ html=html.replace('</head>','<link rel="stylesheet" href="/hero.css?v=27"></head>');
  html=html.replace(/(<svg class="hero-runner"[^>]*viewBox=")[^"]*(")/,'$10 0 1440 1320$2');
  await writeFile('dist/'+lang+'/index.html',html);
 }

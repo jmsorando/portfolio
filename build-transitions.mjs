@@ -5,7 +5,7 @@ await copyFile('source/section-transitions.css','dist/transitions.css');
 for(const lang of ['en','es']) {
   let html=await readFile(`dist/${lang}/index.html`,'utf8');
   html=html.replace('class="academic-identities ', 'class="section-transitions academic-identities ');
-  html=html.replace('</head>','<link rel="stylesheet" href="/transitions.css?v=1"></head>');
+  html=html.replace('</head>','<link rel="stylesheet" href="/transitions.css?v=2"></head>');
   html=html.replace('/hero-scroll.js?v=2','/hero-scroll.js?v=3');
   html=html.replace(/(<section id="experience"[\s\S]*?)<div class="border-b border-hairline pb-4">/,
     '$1<div class="border-b border-hairline pb-4" data-section-transition="career">');

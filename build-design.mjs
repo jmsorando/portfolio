@@ -15,14 +15,14 @@ function requiredReplace(text, pattern, replacement, name) {
   return result;
 }
 function sectionLabel(number, label) {
-  return `<span class="design-section-label"><span aria-hidden="true">${number}</span>${label}</span>`;
+  return `<span class="design-section-label">${label}</span>`;
 }
 
 for (const lang of ['en', 'es']) {
   const copy = labels[lang];
   let html = await readFile(`dist/${lang}/index.html`, 'utf8');
   html = requiredReplace(html, 'class="hero-experiment ', 'class="portfolio-design hero-experiment ', 'body class');
-  html = html.replace('</head>', '<link rel="stylesheet" href="/design.css?v=3"><script src="/design.js?v=1" defer></script></head>');
+  html = html.replace('</head>', '<link rel="stylesheet" href="/design.css?v=4"><script src="/design.js?v=1" defer></script></head>');
   html = requiredReplace(html, /(<section id="projects"[\s\S]*?)<span class="text-xs font-mono text-cobalt font-bold tracking-widest uppercase">[^<]*<\/span>/,
     (_, start) => start + sectionLabel('01', copy.projects), 'projects label');
 

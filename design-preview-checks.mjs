@@ -6,10 +6,10 @@ const section = (html, id) => html.match(new RegExp(`<section id="${id}"[\\s\\S]
 for(const lang of ['en','es']) {
   const main = await readFile(`dist/${lang}/index.html`,'utf8');
   assert(main.includes('class="section-transitions academic-identities portfolio-design hero-experiment '),'Main pages use the approved design, academic identities and transitions');
-  assert(main.includes('href="/transitions.css?v=1"'));
+  assert(main.includes('href="/transitions.css?v=2"'));
   assert.equal((main.match(/data-section-transition=/g)||[]).length,4,'Each approved transition target appears once');
-  assert(main.includes('href="/academic.css?v=1"'));
-  assert(main.includes('href="/design.css?v=3"')&&main.includes('src="/design.js?v=1"'));
+  assert(main.includes('href="/academic.css?v=2"'));
+  assert(main.includes('href="/design.css?v=4"')&&main.includes('src="/design.js?v=1"'));
   assert(!main.includes('/preview/')&&!main.includes('noindex'),'Main pages use production assets and metadata');
   assert(main.includes(`rel="canonical" href="https://jmsorando.github.io/portfolio/${lang}/"`));
   const careerDesign=section(main,'experience');

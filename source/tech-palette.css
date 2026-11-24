@@ -11,7 +11,7 @@ html body.portfolio-design > .portfolio-hero{
 }
 html body.portfolio-design > .portfolio-hero::before{
   content:"";position:absolute;inset:0 0 auto;height:2px;pointer-events:none;
-  background:linear-gradient(90deg,#2563eb,#22b8cf 55%,#8b5cf6);
+  background:#2563eb;
 }
 html body.portfolio-design .portfolio-hero h1{color:#102344}
 html body.portfolio-design > .portfolio-hero .hero-copy p{

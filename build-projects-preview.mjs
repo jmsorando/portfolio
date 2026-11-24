@@ -14,7 +14,7 @@ await copyFile('source/tech-palette.css','dist/tech-palette.css');
 for(const lang of ['en','es']){
   const file=`dist/${lang}/index.html`;
   const html=await readFile(file,'utf8');
-  await writeFile(file,html.replace('</head>','<link rel="stylesheet" href="/tech-palette.css?v=10"></head>'));
+  await writeFile(file,html.replace('</head>','<link rel="stylesheet" href="/tech-palette.css?v=11"></head>'));
 }
 await mkdir('dist/projects', {recursive:true});
 for (const [source, output] of [['project-preview.css','dialog.css'], ['project-preview-model.mjs','model.mjs']]) {

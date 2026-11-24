@@ -76,23 +76,10 @@
     if(isIntersecting){target.classList.add('in');reveal.unobserve(target);}
   }),{threshold:.4});
   if(!reduced.matches)headings.forEach(h=>{
-    // Walk text nodes so future nested markup and manual line breaks survive.
-    const walker=document.createTreeWalker(h,NodeFilter.SHOW_TEXT);
-    const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
-    let i=0;for(const node of nodes){
-      const fragment=document.createDocumentFragment();
-      for(const word of node.textContent.split(/(\s+)/)){
-        if(!word)continue;
-        if(/^\s+$/.test(word)){fragment.append(document.createTextNode(word));continue;}
-        const span=document.createElement('span');span.className='w';span.textContent=word;
-        span.style.setProperty('--word-delay',`${Math.min(i++*60,420)}ms`);fragment.append(span);
-      }
-      node.replaceWith(fragment);
-    }
     h.classList.add('kinetic','kinetic-ready');reveal.observe(h);
   });
   const signals=[...document.querySelectorAll('.ecg')];
-  const signalObserver=new Observer(entries=>entries.forEach(e=>e.target.classList.toggle('is-visible',e.isIntersecting)),{threshold:.1});
+  const signalObserver=new Observer(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');signalObserver.unobserve(e.target);}}),{threshold:.1});
   signals.forEach(el=>signalObserver.observe(el));
   reduced.addEventListener('change',()=>{if(reduced.matches){headings.forEach(h=>h.classList.add('in'));reveal.disconnect();}});
   syncMotion();

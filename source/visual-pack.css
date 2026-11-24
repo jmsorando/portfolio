@@ -33,13 +33,13 @@
 .ecg path{fill:none;stroke:#93c5fd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 .ecg-track{opacity:.3}
 .ecg .ecg-pulse{stroke-dasharray:26 74}
-@media(prefers-reduced-motion:no-preference){.ecg.is-visible .ecg-pulse{animation:ecgpulse 6.4s linear infinite}}
+@media(prefers-reduced-motion:no-preference){.ecg.is-visible .ecg-pulse{animation:ecgpulse 6.4s linear 1 forwards}}
 @keyframes ecgpulse{from{stroke-dashoffset:0}to{stroke-dashoffset:-100}}
 html body.portfolio-design #experience{position:relative;isolation:isolate}
-.kinetic .w{display:inline-block}
+
 @media(prefers-reduced-motion:no-preference){
- .kinetic.kinetic-ready .w{opacity:0;transform:translateY(.35em);transition:opacity .55s ease,transform .55s cubic-bezier(.22,.61,.21,1);transition-delay:var(--word-delay,0ms)}
- .kinetic.kinetic-ready.in .w{opacity:1;transform:none}
+ .kinetic.kinetic-ready{opacity:0;transform:translateY(4px);transition:opacity .2s ease-out,transform .2s ease-out;animation:none!important}
+ .kinetic.kinetic-ready.in{opacity:1;transform:none}
 }
 @media(prefers-reduced-motion:reduce){.ecg .ecg-pulse{animation:none;stroke-dasharray:none}}
 @media(max-width:600px){.movement-strip{gap:12px;margin-inline:16px;padding-inline:0}.mesh-figure figcaption{font-size:9px}}
@@ -50,5 +50,5 @@ html body.portfolio-design #experience{position:relative;isolation:isolate}
 .motion-toggle:disabled{cursor:default;text-decoration:none}
 body.motion-paused .portfolio-hero::after,body.motion-paused .portfolio-hero::before,body.motion-paused .ai-heading,body.motion-paused .ecg-pulse{animation-play-state:paused!important}
 body.motion-paused .hero-sport-slide{transition:none}
-body.motion-paused .kinetic.kinetic-ready .w{opacity:1;transform:none;transition:none}
+body.motion-paused .kinetic.kinetic-ready{opacity:1;transform:none;transition:none}
 
