@@ -1,5 +1,5 @@
 /* Opt-in editorial transitions. All default states remain visible without JS. */
-.section-transitions { --transition-distance:8px; --transition-accent:96px; }
+.section-transitions { --transition-distance:4px; --transition-accent:96px; }
 .section-transitions [data-section-transition="career"] { position:relative; }
 .section-transitions [data-section-transition="career"]::after,
 .section-transitions .transition-contact-line {
@@ -53,13 +53,13 @@
     animation:transition-label-enter 180ms ease-out 30ms both;
   }
   .section-transitions [data-section-transition="career"].scroll-reveal-enter>h2 {
-    animation:transition-title-enter 240ms ease-out 60ms both;
+    animation:transition-title-enter 200ms ease-out 60ms both;
   }
   .section-transitions [data-section-transition="copy"].scroll-reveal-enter {
-    animation:transition-title-enter 240ms ease-out 30ms both;
+    animation:transition-title-enter 200ms ease-out 30ms both;
   }
   .section-transitions [data-section-transition="actions"].scroll-reveal-enter {
-    animation:transition-title-enter 240ms ease-out 60ms both;
+    animation:transition-title-enter 200ms ease-out 60ms both;
   }
 }
 @keyframes transition-line-enter { from { transform:scaleX(0); } to { transform:scaleX(1); } }

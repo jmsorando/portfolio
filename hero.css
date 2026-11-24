@@ -8,13 +8,13 @@ html body.hero-experiment > section.portfolio-hero::after{
   content:"";position:absolute;inset:calc(50% - 70px) 0 auto;height:300px;
   transform:translateY(-50%);z-index:-1;
   background:url('/portfolio/assets/hero-signal-waves.svg') center / 100% 100% no-repeat;
-  pointer-events:none;opacity:.45;
+  pointer-events:none;opacity:.28;
 }
 @media(max-width:900px){
   html body.hero-experiment > section.portfolio-hero::after{height:360px;background-size:150% 100%}
 }
 @media(min-width:901px){
-  html body.hero-experiment > section.portfolio-hero .hero-copy p:first-of-type{margin-top:64px!important;background:transparent}
+  html body.hero-experiment > section.portfolio-hero .hero-copy p:first-of-type{margin-top:48px!important;background:transparent}
   html body.hero-experiment > section.portfolio-hero::after{top:var(--hero-wave-center,calc(50% - 70px))}
 }
 @media(forced-colors:active){
@@ -122,7 +122,7 @@ html body.hero-experiment .portfolio-hero .hero-layout{min-height:0}
 
 /* Slow colour flow, isolated to the experimental title. */
 @media(prefers-reduced-motion:no-preference) and (forced-colors:none){
- .hero-experiment .portfolio-hero .ai-heading{background-image:linear-gradient(100deg,#087eaa 0%,#2563eb 28%,#7541c8 55%,#2563eb 78%,#087eaa 100%);background-size:220% 100%;animation:hero-ai-flow 6s ease-in-out infinite alternate}
+ .hero-experiment .portfolio-hero .ai-heading{background-image:linear-gradient(100deg,#087eaa 0%,#2563eb 28%,#7541c8 55%,#2563eb 78%,#087eaa 100%);background-size:100% 100%;animation:none}
 }
 @keyframes hero-ai-flow{from{background-position:0% 50%}to{background-position:100% 50%}}
 

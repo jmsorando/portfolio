@@ -34,7 +34,7 @@
   display:block;
   min-width:0;
   color:#5c6b80;
-  font:400 11px/1.6 'JetBrains Mono',monospace;
+  font:400 12px/1.6 'JetBrains Mono',monospace;
 }
 .academic-identities .academic-identity-details .academic-identity-date { margin-top:6px; }
 .academic-identities #experience .academic-society h3 { margin:18px 0 0; }
